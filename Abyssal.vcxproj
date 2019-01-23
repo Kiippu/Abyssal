@@ -129,7 +129,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x86;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

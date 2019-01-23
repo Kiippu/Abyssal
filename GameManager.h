@@ -2,8 +2,12 @@
 
 //#include "Core/Render/Renderer.h"
 //#include "Core/Events/EventHandler.h"
+//#include <memory>
+//#include <iostream>
 
 //class UpdaterGameLoop;
+//class EventHandler;
+//class Renderer;
 
 class GameManager
 {
@@ -15,17 +19,18 @@ public:
 
 private:
 	// private constructor to impl singleton
-	GameManager() {};
+	GameManager();
 
-	//void Render();
+	void Render();
 
-	//void MasterUpdate();
+	void MasterUpdate();
 
 	// Handles all our SDL2 event ( quit, keydown, ++ )
-	//EventHandler m_handler;
-
+	/*std::unique_ptr<EventHandler> m_handler = std::make_unique<EventHandler>();
+	std::unique_ptr<Renderer> m_renderer = std::make_unique<Renderer>();
+*/
 	// Handles everything related to OpenGL
-	//Renderer m_renderer;
+	 //m_renderer;
 
 public:
 	// Safety to delete any copies or new instances
@@ -33,6 +38,8 @@ public:
 	void operator=(GameManager const&) = delete;
 
 	// Scene manager
+
+	//r
 
 	//bool InitEngine();
 

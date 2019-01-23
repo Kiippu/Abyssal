@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "Core/Render/Renderer.h"
+#include "Core/Render/Model.h"
 #include "Core/Events/EventHandler.h"
 #include "Core/Math/Math.h"
 
@@ -15,7 +16,7 @@
 EventHandler handler;
 
 // Handles everything related to OpenGL
-Renderer renderer;
+Renderer * renderer = &Renderer::getInstance();
 
 // Handles a single model with its vertexes and matrix
 Model model;
@@ -26,17 +27,17 @@ void UpdateModel();
 void Render()
 {
 	// Tell Renderer to clear everything
-	renderer.RenderStart();
+	Renderer::getInstance().RenderStart();
 
 	// Set the matrix in the model
 	// This has to be done once per model
-	renderer.SetMatrix(model.GetModel());
+	renderer->SetMatrix(model.GetModel());
 
 	// Render our model
-	renderer.RenderModel(model);
+	renderer->RenderModel(model);
 
 	// Tell our Renderer to swap the buffers
-	renderer.RenderEnd();
+	renderer->RenderEnd();
 }
 
 void Update()
@@ -83,25 +84,25 @@ void UpdateModel()
 
 int main(int argc, char *argv[])
 {
-	if (!renderer.Init())
+	if (!renderer->Init())
 		return -1;
 
 	PrintCommands();
 
 	// Set up our only shader in Shader
-	renderer.SetUpShader("Core/Render/Shader/Vertex/vert.glsl", "Core/Render/Shader/Fragment/frag.glsl");
+	renderer->SetUpShader("Core/Render/Shader/Vertex/vert.glsl", "Core/Render/Shader/Fragment/frag.glsl");
 
 	// Create the Model
 	if (!model.SetupBufferObjects())
 		return -1;
 
 	// Set the shader 
-	renderer.SetShader(model);
+	renderer->SetShader(model);
 
 	// Run our main update loop
 	Update();
 
-	renderer.Cleanup();
+	renderer->Cleanup();
 
 	return 0;
 }
