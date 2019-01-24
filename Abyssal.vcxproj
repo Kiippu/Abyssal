@@ -27,7 +27,8 @@
     <ClCompile Include="Core\Node\Derivative\EntityNode.cpp" />
     <ClCompile Include="Core\Node\Node.cpp" />
     <ClCompile Include="Abyssal.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameFlow\GameManager.cpp" />
+    <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -48,7 +49,8 @@
     <ClInclude Include="Core\Render\Model.h" />
     <ClInclude Include="Core\Render\Renderer.h" />
     <ClInclude Include="Core\Render\Shader\Shader.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameFlow\GameManager.h" />
+    <ClInclude Include="GameFlow\Updater\MasterUpdate.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Core\Render\Shader\Fragment\frag.glsl" />

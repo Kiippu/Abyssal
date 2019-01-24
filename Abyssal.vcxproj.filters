@@ -87,11 +87,14 @@
     <ClCompile Include="Abyssal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>GameFlow</Filter>
-    </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Core\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFlow\GameManager.cpp">
+      <Filter>GameFlow</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp">
+      <Filter>GameFlow\Updater</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,8 +149,11 @@
     <ClInclude Include="Core\Containers\PriorityType.h">
       <Filter>Core\Container</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
+    <ClInclude Include="GameFlow\GameManager.h">
       <Filter>GameFlow</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Updater\MasterUpdate.h">
+      <Filter>GameFlow\Updater</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

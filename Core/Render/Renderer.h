@@ -40,6 +40,8 @@ public:
 	Renderer(const Renderer&) = delete;
 	void operator=(Renderer const&) = delete;
 
+	void Render(Model & model);
+
 	bool Init();
 
 	bool SetUpShader(const std::string &vertex, const std::string &fragment);

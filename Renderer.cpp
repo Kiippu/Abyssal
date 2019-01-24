@@ -53,6 +53,22 @@ Renderer::Renderer()
 }
 
 
+void Renderer::Render(Model & model)
+{
+	// Tell Renderer to clear everything
+	RenderStart();
+
+	// Set the matrix in the model
+	// This has to be done once per model
+	SetMatrix(model.GetModel());
+
+	// Render our model
+	RenderModel(model);
+
+	// Tell our Renderer to swap the buffers
+	RenderEnd();
+}
+
 bool Renderer::Init()
 {
 	// Initialize SDL's Video subsystem

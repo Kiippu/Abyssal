@@ -24,21 +24,6 @@ Model model;
 void PrintCommands();
 void UpdateModel();
 
-void Render()
-{
-	// Tell Renderer to clear everything
-	Renderer::getInstance().RenderStart();
-
-	// Set the matrix in the model
-	// This has to be done once per model
-	renderer->SetMatrix(model.GetModel());
-
-	// Render our model
-	renderer->RenderModel(model);
-
-	// Tell our Renderer to swap the buffers
-	renderer->RenderEnd();
-}
 
 void Update()
 {
@@ -50,7 +35,7 @@ void Update()
 		// Update our model position
 		UpdateModel();
 
-		Render();
+		Renderer::getInstance().Render(model);
 	}
 }
 

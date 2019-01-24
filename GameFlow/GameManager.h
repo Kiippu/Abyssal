@@ -9,6 +9,9 @@
 //class EventHandler;
 //class Renderer;
 
+class Renderer;
+class MasterUpdate;
+
 class GameManager
 {
 public:
@@ -23,7 +26,13 @@ private:
 
 	void Render();
 
-	void MasterUpdate();
+	void Update();
+
+	void RunGameLoop();
+
+	MasterUpdate * m_masterUpdate;
+
+	Renderer * m_renderer;
 
 	// Handles all our SDL2 event ( quit, keydown, ++ )
 	/*std::unique_ptr<EventHandler> m_handler = std::make_unique<EventHandler>();
