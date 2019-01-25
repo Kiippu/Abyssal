@@ -8,9 +8,11 @@
 //class UpdaterGameLoop;
 //class EventHandler;
 //class Renderer;
+#include <memory>
 
 class Renderer;
 class MasterUpdate;
+class Model;
 
 class GameManager
 {
@@ -24,7 +26,7 @@ private:
 	// private constructor to impl singleton
 	GameManager();
 
-	void Render();
+	bool Render();
 
 	void Update();
 
@@ -33,6 +35,9 @@ private:
 	MasterUpdate * m_masterUpdate;
 
 	Renderer * m_renderer;
+
+	// Handles a single model with its vertexes and matrix
+	std::unique_ptr<Model> m_model;
 
 	// Handles all our SDL2 event ( quit, keydown, ++ )
 	/*std::unique_ptr<EventHandler> m_handler = std::make_unique<EventHandler>();
@@ -45,6 +50,8 @@ public:
 	// Safety to delete any copies or new instances
 	GameManager(const GameManager&) = delete;
 	void operator=(GameManager const&) = delete;
+
+	void initGameEngine();
 
 	// Scene manager
 

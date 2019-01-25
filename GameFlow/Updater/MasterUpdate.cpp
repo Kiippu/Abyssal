@@ -6,34 +6,31 @@
 
 MasterUpdate::MasterUpdate()
 {
-	m_eventHandler = std::make_unique<EventHandler>();
-
-	Model m;
-	model = &m;
+	m_eventHandler = &EventHandler::getInstance();
+	//model = std::make_shared<Model>();
 
 	// Handles a single model with its vertexes and matrix
 }
 
-void MasterUpdate::Update()
+void MasterUpdate::Update(Model & model)
 {
 	while (!m_eventHandler->WasQuit())
 	{
 		// Update our event handler
-		Update();
+		m_eventHandler->Update();
+		
+		UpdateModel(model);
 
-		// Update our model position
-		UpdateModel();
-
-		Renderer::getInstance().Render(*model);
+		Renderer::getInstance().Render(model);
 	}
 }
 
-void MasterUpdate::UpdateModel()
+void MasterUpdate::UpdateModel(Model & model)
 {
 	
 	if (m_eventHandler->IsKeyDown(SDLK_r))
 	{
-		model->ResetMatrix();
+		model.ResetMatrix();
 	}
 	else
 	{
@@ -42,17 +39,17 @@ void MasterUpdate::UpdateModel()
 			glm::vec3 axis = Math::GetRotationAxis(*m_eventHandler);
 
 			if (axis != glm::vec3(0.0f))
-				model->Rotate(axis);
+				model.Rotate(axis);
 		}
 		else if (m_eventHandler->IsKeyDown(SDLK_LSHIFT))
 		{
 			glm::vec3 axis = Math::GetScaleAxis(*m_eventHandler);
-			model->Scale(axis);
+			model.Scale(axis);
 		}
 		else
 		{
 			glm::vec3 axis = Math::GetAxis(*m_eventHandler);
-			model->Translate(axis);
+			model.Translate(axis);
 		}
 	}
 }

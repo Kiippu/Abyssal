@@ -70,12 +70,22 @@ struct Event
 };
 class EventHandler
 {
-	public:
-
-	EventHandler()
-		:	quit( false )
-	{
+public:
+	static EventHandler & getInstance() {
+		static EventHandler instance;
+		return instance;
 	}
+
+private:
+	// private constructor to impl singleton
+	EventHandler()
+		: quit(false)
+	{}
+public:
+
+	EventHandler(const EventHandler&) = delete;
+	void operator=(EventHandler const&) = delete;
+	
 	void Update( );
 
 	void ClearEvents();

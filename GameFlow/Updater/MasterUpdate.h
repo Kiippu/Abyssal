@@ -3,9 +3,9 @@
 #define MASTER_UPDATE_H
 
 #include <memory>
+#include "Core/Render/Model.h"
 
 class EventHandler;
-class Model;
 
 class MasterUpdate
 {
@@ -19,18 +19,18 @@ private:
 	// private constructor to impl singleton
 	MasterUpdate();
 
-	std::unique_ptr<EventHandler> m_eventHandler;
+	EventHandler * m_eventHandler;
 
-	Model * model;
+	Model model;
 
 public:
 	// Safety to delete any copies or new instances
 	MasterUpdate(const MasterUpdate&) = delete;
 	void operator=(MasterUpdate const&) = delete;
 
-	void Update();
+	void Update(Model &);
 
-	void UpdateModel();
+	void UpdateModel(Model &);
 
 };
 
