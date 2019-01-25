@@ -61,6 +61,15 @@
     <Filter Include="GameFlow\Updater">
       <UniqueIdentifier>{5f2bf42b-33e0-4976-ae1b-b66c8499b81b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Component\Derivatives\Update">
+      <UniqueIdentifier>{2c6ca760-be4d-42b9-bbb4-99037fd546ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Derivatives\Render">
+      <UniqueIdentifier>{59db0e74-5125-49f7-b088-3019d371a093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Derivatives\IO">
+      <UniqueIdentifier>{b944c81b-cf06-4890-863c-5bdb518122e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Events\EventHandler.cpp">
@@ -68,12 +77,6 @@
     </ClCompile>
     <ClCompile Include="Core\Component\Component.cpp">
       <Filter>Core\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\AnimatedSprite.cpp">
-      <Filter>Core\Component\Derivatives</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\ReadWrite.cpp">
-      <Filter>Core\Component\Derivatives</Filter>
     </ClCompile>
     <ClCompile Include="Core\Containers\Container.cpp">
       <Filter>Core\Container</Filter>
@@ -95,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp">
       <Filter>GameFlow\Updater</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Derivative\IO\ReadWrite.cpp">
+      <Filter>Core\Component\Derivatives\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Derivative\Render\AnimatedSprite.cpp">
+      <Filter>Core\Component\Derivatives\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Derivative\Update\UpdateCore.cpp">
+      <Filter>Core\Component\Derivatives\Update</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,12 +134,6 @@
     <ClInclude Include="Core\Component\ComponentTypes.h">
       <Filter>Core\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\AnimatedSprite.h">
-      <Filter>Core\Component\Derivatives</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\ReadWrite.h">
-      <Filter>Core\Component\Derivatives</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Containers\Container.h">
       <Filter>Core\Container</Filter>
     </ClInclude>
@@ -154,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="GameFlow\Updater\MasterUpdate.h">
       <Filter>GameFlow\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Component\Derivative\IO\ReadWrite.h">
+      <Filter>Core\Component\Derivatives\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Component\Derivative\Render\AnimatedSprite.h">
+      <Filter>Core\Component\Derivatives\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Component\Derivative\Update\UpdateCore.h">
+      <Filter>Core\Component\Derivatives\Update</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

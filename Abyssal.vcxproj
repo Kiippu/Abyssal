@@ -20,8 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Component\Component.cpp" />
-    <ClCompile Include="Core\Component\Derivative\AnimatedSprite.cpp" />
-    <ClCompile Include="Core\Component\Derivative\ReadWrite.cpp" />
+    <ClCompile Include="Core\Component\Derivative\IO\ReadWrite.cpp" />
+    <ClCompile Include="Core\Component\Derivative\Render\AnimatedSprite.cpp" />
+    <ClCompile Include="Core\Component\Derivative\Update\UpdateCore.cpp" />
     <ClCompile Include="Core\Containers\Container.cpp" />
     <ClCompile Include="Core\Events\EventHandler.cpp" />
     <ClCompile Include="Core\Node\Derivative\EntityNode.cpp" />
@@ -35,8 +36,9 @@
     <ClInclude Include="Core\Component\Component.h" />
     <ClInclude Include="Core\Component\ComponentHeaders.h" />
     <ClInclude Include="Core\Component\ComponentTypes.h" />
-    <ClInclude Include="Core\Component\Derivative\AnimatedSprite.h" />
-    <ClInclude Include="Core\Component\Derivative\ReadWrite.h" />
+    <ClInclude Include="Core\Component\Derivative\IO\ReadWrite.h" />
+    <ClInclude Include="Core\Component\Derivative\Render\AnimatedSprite.h" />
+    <ClInclude Include="Core\Component\Derivative\Update\UpdateCore.h" />
     <ClInclude Include="Core\Containers\Container.h" />
     <ClInclude Include="Core\Containers\ContainerSort.h" />
     <ClInclude Include="Core\Containers\PriorityType.h" />

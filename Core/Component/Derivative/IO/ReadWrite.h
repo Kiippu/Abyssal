@@ -10,8 +10,6 @@ public:
 	ReadWrite();
 	~ReadWrite();
 
-	void Update();
-	
 };
 
 using READ_WRITE_PTR = std::shared_ptr<ReadWrite>;

@@ -8,8 +8,8 @@
 #include "Container.h"
 
 //components
-#include "Core/Component/Derivative/AnimatedSprite.h"
-#include "Core/Component/Derivative/ReadWrite.h"
+#include "Core/Component/Derivative/Render/AnimatedSprite.h"
+#include "Core/Component/Derivative/IO/ReadWrite.h"
 
 
 

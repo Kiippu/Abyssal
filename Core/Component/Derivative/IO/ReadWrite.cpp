@@ -1,4 +1,4 @@
-#include "ReadWrite.h"
+#include "Core/Component/Derivative/IO/ReadWrite.h"
 #include <iostream>
 
 
@@ -11,10 +11,4 @@ ReadWrite::ReadWrite()
 
 ReadWrite::~ReadWrite()
 {
-}
-
-void ReadWrite::Update()
-{
-	std::cout << "ReadWrite was updated" << std::endl;
-	std::cout << "ReadWrite should update 2rd" << std::endl;
 }

@@ -1,4 +1,4 @@
-#include "AnimatedSprite.h"
+#include "Core/Component/Derivative/Render/AnimatedSprite.h"
 #include <iostream>
 
 AnimatedSprite::AnimatedSprite()
@@ -10,10 +10,4 @@ AnimatedSprite::AnimatedSprite()
 
 AnimatedSprite::~AnimatedSprite()
 {
-}
-
-void AnimatedSprite::Update()
-{
-	std::cout << "AnimatedSprite was updated" << std::endl;
-	std::cout << "AnimatedSprite should update 1st" << std::endl;
 }

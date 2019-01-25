@@ -29,10 +29,10 @@ CONTAINER_PTR const Node::GetComponentContainer() const
 {
 	return comp_container;
 }
-
-void Node::Update()
-{
-	for (auto comp : comp_container->GetContainerList()) {
-		comp->Update();
-	}
-}
+//
+//void Node::Update()
+//{
+//	for (auto comp : comp_container->GetContainerList()) {
+//		comp->Update();
+//	}
+//}
