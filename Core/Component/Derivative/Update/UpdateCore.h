@@ -37,4 +37,5 @@ private:
 using UPDATE_CORE_PTR = std::shared_ptr<UpdateCore>;
 
 
+
 #endif // !UPDATE_CORE_H

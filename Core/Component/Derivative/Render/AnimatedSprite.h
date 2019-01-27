@@ -2,7 +2,7 @@
 #ifndef ANIMATED_SPRITE_H
 #define ANIMATED_SPRITE_H
 
-#include "Core/Component/Component.h"
+#include "Core/Component/Derivative/ComponentUpdatable.h"
 
 
 /*******************************************************************
@@ -16,11 +16,13 @@
 
 *********************************************************************/
 
-class AnimatedSprite : public Component
+class AnimatedSprite : public ComponentUpdatable
 {
 public:
 	AnimatedSprite();
 	~AnimatedSprite();
+
+	bool Update();
 
 };
 

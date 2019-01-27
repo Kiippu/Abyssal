@@ -17,13 +17,9 @@ typedef enum : unsigned int
 {
 	COMP_INPUT = 0,					//NOT DONE
 	COMP_ANIMATED_SPRITE,			//CREATED - NOT FINISHED
-	COMP_PHYSICS,					//NOT DONE
-	COMP_COLLISION,					//NOT DONE
-	COMP_DELTA_TIME,				//NOT DONE
-	COMP_ENTITY,					//NOT DONE
-	COMP_CONTROL,					//NOT DONE
 	COMP_READ_WRITE,				//CREATED - NOT FINISHED
 	COMP_RENDER,					//CREATED - NOT FINISHED
+	COMP_MODEL3D,
 	COMP_NODE_CONTAINER				//NEW IDEA - Component that has a container that holds nodes (item bags, inventory)
 
 } LABEL_COMPONENT_TYPE;

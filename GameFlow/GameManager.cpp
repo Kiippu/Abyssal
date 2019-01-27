@@ -35,11 +35,13 @@ bool GameManager::Render()
 
 	// Set the shader 
 	m_renderer->SetShader(*m_model);
+
+	return true;
 }
 
 void GameManager::Update()
 {
-	m_masterUpdate->Update(*m_model);
+	m_masterUpdate->Update();
 }
 
 void GameManager::RunGameLoop()

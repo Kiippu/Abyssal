@@ -1,3 +1,4 @@
+#define _DISABLE_EXTENDED_ALIGNED_STORAGE
 #include "Container.h"
 
 #include <iostream>
@@ -56,21 +57,26 @@ CONTAINER_LIST const & Container::GetContainerList() const
 // adds components to list after checking them
 void Container::AddComponent(LABEL_COMPONENT_TYPE ct)
 {
-	COMPONENT_PTR newComponent;
+	//COMPONENT_PTR newComponent;
 	if (!hasComponent(ct)) {
 		// Creates components depending on what component type is passed
 		switch (ct)
 		{
 			// Animated sprites
 		case(LABEL_COMPONENT_TYPE::COMP_ANIMATED_SPRITE): {
-			newComponent = std::make_shared<AnimatedSprite>();
+			//newComponent = std::make_shared<AnimatedSprite>();
 			break;
 		}
 		case(LABEL_COMPONENT_TYPE::COMP_READ_WRITE): {
-			newComponent = std::make_shared<ReadWrite>();
+			//newComponent = std::make_shared<ReadWrite>();
 			break;
 		}
-		
+		case(LABEL_COMPONENT_TYPE::COMP_MODEL3D): {
+			auto newComponent = std::make_shared<Model3D>();
+			ComponentContainer.push_back(newComponent);
+			std::cout << "Model3D created!" << std::endl;
+			break;
+		}
 		default:
 			break;
 		}
@@ -79,7 +85,7 @@ void Container::AddComponent(LABEL_COMPONENT_TYPE ct)
 		std::cout << "LABLE_COMPONENT_TYPE " << ct << " already exists in the container" << std::endl;
 
 
-	ComponentContainer.push_back(newComponent);
+	//ComponentContainer.push_back(newComponent);
 	SortContainer();
 }
 

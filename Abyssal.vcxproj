@@ -20,14 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Component\Component.cpp" />
+    <ClCompile Include="Core\Component\Derivative\ComponentUpdatable.cpp" />
     <ClCompile Include="Core\Component\Derivative\IO\ReadWrite.cpp" />
     <ClCompile Include="Core\Component\Derivative\Render\AnimatedSprite.cpp" />
-    <ClCompile Include="Core\Component\Derivative\Update\UpdateCore.cpp" />
+    <ClCompile Include="Core\Component\Derivative\Render\Model3D.cpp" />
     <ClCompile Include="Core\Containers\Container.cpp" />
     <ClCompile Include="Core\Events\EventHandler.cpp" />
-    <ClCompile Include="Core\Node\Derivative\EntityNode.cpp" />
+    <ClCompile Include="Core\Node\Derivative\DynamicEntityNode.cpp" />
+    <ClCompile Include="Core\Node\Derivative\Shape\Cube.cpp" />
+    <ClCompile Include="Core\Node\Derivative\StaticEntityNode.cpp" />
     <ClCompile Include="Core\Node\Node.cpp" />
     <ClCompile Include="Abyssal.cpp" />
+    <ClCompile Include="Core\Render\Model.cpp" />
     <ClCompile Include="GameFlow\GameManager.cpp" />
     <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -36,15 +40,18 @@
     <ClInclude Include="Core\Component\Component.h" />
     <ClInclude Include="Core\Component\ComponentHeaders.h" />
     <ClInclude Include="Core\Component\ComponentTypes.h" />
+    <ClInclude Include="Core\Component\Derivative\ComponentUpdatable.h" />
     <ClInclude Include="Core\Component\Derivative\IO\ReadWrite.h" />
     <ClInclude Include="Core\Component\Derivative\Render\AnimatedSprite.h" />
-    <ClInclude Include="Core\Component\Derivative\Update\UpdateCore.h" />
+    <ClInclude Include="Core\Component\Derivative\Render\Model3D.h" />
     <ClInclude Include="Core\Containers\Container.h" />
     <ClInclude Include="Core\Containers\ContainerSort.h" />
     <ClInclude Include="Core\Containers\PriorityType.h" />
     <ClInclude Include="Core\Events\EventHandler.h" />
     <ClInclude Include="Core\Math\Math.h" />
-    <ClInclude Include="Core\Node\Derivative\EntityNode.h" />
+    <ClInclude Include="Core\Node\Derivative\DynamicEntityNode.h" />
+    <ClInclude Include="Core\Node\Derivative\Shape\Cube.h" />
+    <ClInclude Include="Core\Node\Derivative\StaticEntityNode.h" />
     <ClInclude Include="Core\Node\Node.h" />
     <ClInclude Include="Core\Node\NodeHeaders.h" />
     <ClInclude Include="Core\Node\NodeTypes.h" />

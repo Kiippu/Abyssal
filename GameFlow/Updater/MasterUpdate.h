@@ -3,9 +3,16 @@
 #define MASTER_UPDATE_H
 
 #include <memory>
-#include "Core/Render/Model.h"
+#include <vector>
+//#include "Core/Render/Model.h"
+//#include "Core/Node/Derivative/DynamicEntityNode.h"
 
 class EventHandler;
+class DynamicEntityNode;
+class Cube;
+
+
+using DYNAMIC_ENTITY_PTR = std::shared_ptr<DynamicEntityNode>;
 
 class MasterUpdate
 {
@@ -21,17 +28,25 @@ private:
 
 	EventHandler * m_eventHandler;
 
-	Model model;
+	//Model model;
+
+	std::vector<DYNAMIC_ENTITY_PTR> m_EnityList;
+
+	std::shared_ptr<Cube> cube;
+
 
 public:
 	// Safety to delete any copies or new instances
 	MasterUpdate(const MasterUpdate&) = delete;
 	void operator=(MasterUpdate const&) = delete;
 
-	void Update(Model &);
+	void Update();
 
-	void UpdateModel(Model &);
+	//void UpdateModel(Model &);
 
 };
+
+
+
 
 #endif 

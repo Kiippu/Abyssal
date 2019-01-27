@@ -1,4 +1,5 @@
 #pragma once
+
 #ifndef COMPONENT_HEADERS_H
 #define COMPONENT_HEADER_H
 
@@ -10,6 +11,7 @@
 //components
 #include "Core/Component/Derivative/Render/AnimatedSprite.h"
 #include "Core/Component/Derivative/IO/ReadWrite.h"
+#include "Core/Component/Derivative/Render/Model3D.h"
 
 
 

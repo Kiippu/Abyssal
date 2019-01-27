@@ -61,14 +61,14 @@
     <Filter Include="GameFlow\Updater">
       <UniqueIdentifier>{5f2bf42b-33e0-4976-ae1b-b66c8499b81b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\Derivatives\Update">
-      <UniqueIdentifier>{2c6ca760-be4d-42b9-bbb4-99037fd546ae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Component\Derivatives\Render">
       <UniqueIdentifier>{59db0e74-5125-49f7-b088-3019d371a093}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Component\Derivatives\IO">
       <UniqueIdentifier>{b944c81b-cf06-4890-863c-5bdb518122e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Derivatives\Shapes">
+      <UniqueIdentifier>{657d6f7b-4b2f-4f85-856f-f4f1ab5c3141}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +83,6 @@
     </ClCompile>
     <ClCompile Include="Core\Node\Node.cpp">
       <Filter>Core\Node</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Node\Derivative\EntityNode.cpp">
-      <Filter>Core\Node\Derivatives</Filter>
     </ClCompile>
     <ClCompile Include="Abyssal.cpp">
       <Filter>Source Files</Filter>
@@ -105,8 +102,23 @@
     <ClCompile Include="Core\Component\Derivative\Render\AnimatedSprite.cpp">
       <Filter>Core\Component\Derivatives\Render</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\Update\UpdateCore.cpp">
-      <Filter>Core\Component\Derivatives\Update</Filter>
+    <ClCompile Include="Core\Component\Derivative\ComponentUpdatable.cpp">
+      <Filter>Core\Component\Derivatives</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Derivative\DynamicEntityNode.cpp">
+      <Filter>Core\Node\Derivatives</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Derivative\StaticEntityNode.cpp">
+      <Filter>Core\Node\Derivatives</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Derivative\Shape\Cube.cpp">
+      <Filter>Core\Node\Derivatives\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Derivative\Render\Model3D.cpp">
+      <Filter>Core\Component\Derivatives\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Render\Model.cpp">
+      <Filter>Core\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,9 +161,6 @@
     <ClInclude Include="Core\Node\NodeHeaders.h">
       <Filter>Core\Node</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Node\Derivative\EntityNode.h">
-      <Filter>Core\Node\Derivatives</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Containers\PriorityType.h">
       <Filter>Core\Container</Filter>
     </ClInclude>
@@ -167,8 +176,20 @@
     <ClInclude Include="Core\Component\Derivative\Render\AnimatedSprite.h">
       <Filter>Core\Component\Derivatives\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\Update\UpdateCore.h">
-      <Filter>Core\Component\Derivatives\Update</Filter>
+    <ClInclude Include="Core\Component\Derivative\ComponentUpdatable.h">
+      <Filter>Core\Component\Derivatives</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Derivative\DynamicEntityNode.h">
+      <Filter>Core\Node\Derivatives</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Derivative\StaticEntityNode.h">
+      <Filter>Core\Node\Derivatives</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Derivative\Shape\Cube.h">
+      <Filter>Core\Node\Derivatives\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Component\Derivative\Render\Model3D.h">
+      <Filter>Core\Component\Derivatives\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
