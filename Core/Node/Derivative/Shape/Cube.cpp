@@ -17,10 +17,10 @@ Cube::~Cube()
 bool Cube::Update()
 {
 	 auto component = GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
-	 if (component)
+	 if (component != nullptr)
 	 {
 		 Model3D & modelComponent = dynamic_cast<Model3D&>(*component);
-		 auto model = modelComponent.getModel();
+		 auto & model = modelComponent.getModel();
 
 		 //Model model;
 

@@ -35,29 +35,33 @@ MasterUpdate::MasterUpdate()
 
 void MasterUpdate::Update()
 {
-	auto m_EnityList = m_gameObjects->getAllDynamicObjects();
 	while (!m_eventHandler->WasQuit())
 	{
+
+
+		auto & dynamicObjects = m_gameObjects->getAllDynamicObjects();
 		// Update our event handler
 		m_eventHandler->Update();
 
-		for (long i = 0; i < m_EnityList.size(); i++)
-		{
-			m_EnityList[i]->Update();
-		}
 		
-		for (long i = 0; i < m_EnityList.size(); i++)
+		
+		for (auto & obj : dynamicObjects)
 		{
 			//m_EnityList[i]->Update();
-			if (m_EnityList[i]->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
+			if (obj->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
 			{
-				auto modelComponent = m_EnityList[i]->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+				auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 				Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
 				
-				auto model = model3D.getModel();
+				auto & model = model3D.getModel();
 
 				Renderer::getInstance().Render(model);
 			}
+		}
+
+		for (auto & obj : dynamicObjects)
+		{
+			obj->Update();
 		}
 		//UpdateModel(model);
 

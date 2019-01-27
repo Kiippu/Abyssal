@@ -32,7 +32,7 @@ Renderer::Renderer()
 {
 	m_gameObjects = &GameObjects::getInstance();
 
-	simpleShader = std::make_shared<Shader>();
+	//simpleShader = std::make_shared<Shader>();
 	// Set up our matricies
 	// I strongly encourage you to mess around with the values here and see what they do
 	// It's a lot of fun, and you'll learn a lot
@@ -63,9 +63,10 @@ void Renderer::Render(Model & model)
 	// Tell Renderer to clear everything
 	RenderStart();
 
+	
 	// Set the matrix in the model
 	// This has to be done once per model
-	SetMatrix(model.GetModel());
+	SetMatrix(model.GetModel(), model.GetShader());
 
 	// Render our model
 	RenderModel(model);
@@ -120,7 +121,7 @@ bool Renderer::Init()
 bool Renderer::RenderSetup()
 {
 	if (!Init())
-		return -1;
+		return false;
 
 	std::cout << "Controls :"
 		<< "\n\tMove left : \t\t\t Left"
@@ -134,15 +135,15 @@ bool Renderer::RenderSetup()
 	SetUpShader("Core/Render/Shader/Vertex/vert.glsl", "Core/Render/Shader/Fragment/frag.glsl");
 
 	auto dynamicObjects = m_gameObjects->getAllDynamicObjects();
-	for (long i = 0; i < dynamicObjects.size(); i++)
+	for (auto & obj : dynamicObjects)
 	{
-		auto modelComponent = dynamicObjects[i]->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+		auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 		Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
 
-		auto model = model3D.getModel();
+		auto & model = model3D.getModel();
 		/// TODO: replace with array pf objects etc
 		if (!model.SetupBufferObjects())
-			return -1;
+			return false;
 
 		// Set the shader 
 		SetShader(model);
@@ -156,24 +157,37 @@ bool Renderer::RenderSetup()
 
 bool Renderer::RegisterObjects()
 {
-	return false;
+	return false; 
 }
 
 bool Renderer::SetUpShader(const std::string & vertex, const std::string & fragment)
 {
-	if (!simpleShader->Init())
-		return false;
+	auto dynamicList = m_gameObjects->getAllDynamicObjects();
+	for (auto & obj : dynamicList)
+	{
+		if (obj->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
+		{
+			auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+			Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
+			auto & model = model3D.getModel();
+			Shader & shader = model.GetShader();
 
-	//if (!simpleShader.LoadShader("vert.glsl", GL_VERTEX_SHADER))
-	if (!simpleShader->LoadShader(vertex, GL_VERTEX_SHADER))
-		return false;
+			if (!shader.Init())
+				return false;
 
-	if (!simpleShader->LoadShader(fragment, GL_FRAGMENT_SHADER))
-		return false;
+			//if (!simpleShader.LoadShader("vert.glsl", GL_VERTEX_SHADER))
+			if (!shader.LoadShader(vertex, GL_VERTEX_SHADER))
+				return false;
 
-	if (!simpleShader->LinkShaders())
-		return false;
+			if (!shader.LoadShader(fragment, GL_FRAGMENT_SHADER))
+				return false;
 
+			if (!shader.LinkShaders())
+				return false;
+
+		}
+
+	}
 	return true;
 }
 
@@ -197,21 +211,32 @@ void Renderer::RenderEnd()
 	SDL_GL_SwapWindow(mainWindow);
 }
 
-void Renderer::SetMatrix(const glm::mat4 & model)
+void Renderer::SetMatrix(const glm::mat4 & model, Shader & shader)
 {
 	glm::mat4 mvp = projection * view  * model;
-	simpleShader->SetMatrix(mvp);
+	shader.SetMatrix(mvp);
 }
 
 void Renderer::SetShader(Model & m)
 {
-	m.SetShader(*simpleShader);
+	m.SetShader(m.GetShader());
 }
 
 void Renderer::Cleanup()
 {
-	// Cleanup all the things we bound and allocated
-	simpleShader->CleanUp();
+	auto dynamicList = m_gameObjects->getAllDynamicObjects();
+	for (auto & obj : dynamicList)
+	{
+		if (obj->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
+		{
+			auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+			Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
+			auto & model = model3D.getModel();
+			Shader & shader = model.GetShader();
+			// Cleanup all the things we bound and allocated
+			shader.CleanUp();
+		}
+	}
 
 	// Delete our OpengL context
 	SDL_GL_DeleteContext(mainContext);

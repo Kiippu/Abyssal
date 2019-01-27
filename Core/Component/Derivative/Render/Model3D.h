@@ -33,7 +33,7 @@ public:
 
 private:
 
-	std::shared_ptr<Model> m_model;
+	Model m_model;
 
 };
 

@@ -18,7 +18,7 @@
 
 glm::mat4 Model::GetModel()
 {
-	return m_model;
+	return model;
 }
 
 void Model::SetMatrix(glm::mat4 mvp)
@@ -35,7 +35,7 @@ void Model::Render() const
 
 void Model::ResetMatrix()
 {
-	m_model = glm::mat4(1.0f);
+	model = glm::mat4(1.0f);
 	m_rotate = glm::mat4(1.0f);
 	m_scale = glm::mat4(1.0f);
 	m_translate = glm::mat4(1.0f);
@@ -61,7 +61,7 @@ void Model::Scale(glm::vec3 axis)
 
 void Model::UpdateMatrix()
 {
-	m_model = m_scale * m_translate * m_rotate ;
+	model = m_scale * m_translate * m_rotate ;
 }
 
 // Cleanup all the things we bound and allocated
@@ -150,5 +150,10 @@ static std::vector<GLfloat> ReadFile(const char* file)
 void Model::SetShader(Shader _shader)
 {
 	m_shader = _shader;
+}
+
+Shader & Model::GetShader()
+{
+	return m_shader;
 }
 

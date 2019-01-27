@@ -39,6 +39,8 @@ class Model
 
 	void SetShader(Shader _shader);
 
+	Shader & GetShader();
+
 	private:
 
 	// VBO data
@@ -52,7 +54,7 @@ class Model
 	const uint32_t m_positionAttributeIndex, m_colorAttributeIndex;
 
 	// Model matrix : an identity matrix (model will be at the origin)
-	glm::mat4 m_model;
+	glm::mat4 model;
 	glm::mat4 m_rotate;
 	glm::mat4 m_translate;
 	glm::mat4 m_scale;
