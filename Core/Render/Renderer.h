@@ -9,9 +9,8 @@
 #include <iostream>
 #include <string>
 
-// Headerphile
 #include "Core/Render/Shader/Shader.h"
-//#include "Core/Render/Model.h"
+
 
 // OpenGL stuff
 #define GL3_PROTOTYPES 1
@@ -19,8 +18,11 @@
 #include <glm/glm.hpp>
 #include <SDL.h>
 
+#include "GameFlow/GameObjects/GameObjects.h"
+
 class Model;
 class Shader;
+class GameObjects;
 
 class Renderer
 {
@@ -29,7 +31,6 @@ public:
 		static Renderer instance;
 		return instance;
 	}
-
 
 private:
 	// private constructor to impl singleton
@@ -43,6 +44,10 @@ public:
 	void Render(Model & model);
 
 	bool Init();
+
+	bool RenderSetup();
+
+	bool RegisterObjects();
 
 	bool SetUpShader(const std::string &vertex, const std::string &fragment);
 
@@ -82,4 +87,7 @@ private:
 	// Matricies
 	glm::mat4 projection;
 	glm::mat4 view;
+
+	GameObjects * m_gameObjects;
+
 };

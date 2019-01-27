@@ -16,6 +16,9 @@
 // Headerphile
 #include "Core/Render/Shader/Shader.h"
 #include "Core/Render/Model.h"
+#include "GameFlow/GameObjects/GameObjects.h"
+#include "Core/Node/Derivative/DynamicEntityNode.h"
+#include "Core/Component/Derivative/Render/Model3D.h"
 
 std::string programName = "Headerphile SDL2 - OpenGL thing";
 
@@ -27,6 +30,8 @@ std::string programName = "Headerphile SDL2 - OpenGL thing";
 
 Renderer::Renderer()
 {
+	m_gameObjects = &GameObjects::getInstance();
+
 	simpleShader = std::make_shared<Shader>();
 	// Set up our matricies
 	// I strongly encourage you to mess around with the values here and see what they do
@@ -110,6 +115,48 @@ bool Renderer::Init()
 	//if (!CreateSimpleShader()) return false;
 
 	return true;
+}
+
+bool Renderer::RenderSetup()
+{
+	if (!Init())
+		return -1;
+
+	std::cout << "Controls :"
+		<< "\n\tMove left : \t\t\t Left"
+		<< "\n\tMove right : \t\t\t Right"
+		<< "\n\tMove up : \t\t\t Up"
+		<< "\n\tMove down : \t\t\t Down"
+		<< "\n\tMove clockwise : \t\t w"
+		<< "\n\tMove counter-clockwise : \t s"
+		<< std::endl;
+
+	SetUpShader("Core/Render/Shader/Vertex/vert.glsl", "Core/Render/Shader/Fragment/frag.glsl");
+
+	auto dynamicObjects = m_gameObjects->getAllDynamicObjects();
+	for (long i = 0; i < dynamicObjects.size(); i++)
+	{
+		auto modelComponent = dynamicObjects[i]->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+		Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
+
+		auto model = model3D.getModel();
+		/// TODO: replace with array pf objects etc
+		if (!model.SetupBufferObjects())
+			return -1;
+
+		// Set the shader 
+		SetShader(model);
+	}
+
+
+
+
+	return true;
+}
+
+bool Renderer::RegisterObjects()
+{
+	return false;
 }
 
 bool Renderer::SetUpShader(const std::string & vertex, const std::string & fragment)

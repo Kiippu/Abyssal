@@ -5,6 +5,7 @@
 //#include "Core/Component/Derivative/ComponentUpdatable.h"
 #include "Core/Component/Derivative/ComponentUpdatable.h"
 #include "Core/Render/Model.h"
+#include <memory>
 
 /*******************************************************************
 
@@ -32,7 +33,7 @@ public:
 
 private:
 
-	Model model;
+	std::shared_ptr<Model> m_model;
 
 };
 

@@ -20,9 +20,9 @@ bool Cube::Update()
 	 if (component)
 	 {
 		 Model3D & modelComponent = dynamic_cast<Model3D&>(*component);
-		 //auto model = modelComponent.getModel();
+		 auto model = modelComponent.getModel();
 
-		 Model model;
+		 //Model model;
 
 		 if (m_eventHandler->IsKeyDown(SDLK_r))
 		 {

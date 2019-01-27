@@ -14,6 +14,7 @@
 
 MasterUpdate::MasterUpdate()
 {
+	m_gameObjects = &GameObjects::getInstance();
 	m_eventHandler = &EventHandler::getInstance();
 	//model = std::make_shared<Model>();
 
@@ -21,13 +22,20 @@ MasterUpdate::MasterUpdate()
 	
 	cube->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 	
-	m_EnityList.push_back(cube);
+
+	std::shared_ptr<Node> node = std::dynamic_pointer_cast<Node>(cube);
+
+	m_gameObjects->RegisterWorldObject(node);
+	//m_EnityList.push_back(cube);
+
+
 
 	// Handles a single model with its vertexes and matrix
 }
 
 void MasterUpdate::Update()
 {
+	auto m_EnityList = m_gameObjects->getAllDynamicObjects();
 	while (!m_eventHandler->WasQuit())
 	{
 		// Update our event handler
@@ -38,15 +46,17 @@ void MasterUpdate::Update()
 			m_EnityList[i]->Update();
 		}
 		
-		
 		for (long i = 0; i < m_EnityList.size(); i++)
 		{
-			m_EnityList[i]->Update();
+			//m_EnityList[i]->Update();
 			if (m_EnityList[i]->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
 			{
 				auto modelComponent = m_EnityList[i]->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
-				Model3D & model = dynamic_cast<Model3D&>(*modelComponent);
-				Renderer::getInstance().Render(model.getModel());
+				Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
+				
+				auto model = model3D.getModel();
+
+				Renderer::getInstance().Render(model);
 			}
 		}
 		//UpdateModel(model);

@@ -37,7 +37,7 @@ private:
 	Renderer * m_renderer;
 
 	// Handles a single model with its vertexes and matrix
-	std::unique_ptr<Model> m_model;
+	//std::unique_ptr<Model> m_model;
 
 	// Handles all our SDL2 event ( quit, keydown, ++ )
 	/*std::unique_ptr<EventHandler> m_handler = std::make_unique<EventHandler>();

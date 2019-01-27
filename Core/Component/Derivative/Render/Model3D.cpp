@@ -9,7 +9,7 @@
 Model3D::Model3D()
 	:ComponentUpdatable(LABEL_COMPONENT_TYPE::COMP_MODEL3D,LABEL_PRIORITY_TYPE::PRTY_HIGH)
 {
-	//model = std::make_shared<Model>();
+	m_model = std::make_shared<Model>();
 	std::cout << "constructor - model3D" << std::endl;
 }
 
@@ -24,6 +24,6 @@ bool Model3D::Update()
 
 Model & Model3D::getModel()
 {
-	return model;
+	return *m_model;
 }
 

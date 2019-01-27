@@ -7,6 +7,8 @@
 //#include "Core/Render/Model.h"
 //#include "Core/Node/Derivative/DynamicEntityNode.h"
 
+#include "GameFlow/GameObjects/GameObjects.h"
+
 class EventHandler;
 class DynamicEntityNode;
 class Cube;
@@ -30,7 +32,9 @@ private:
 
 	//Model model;
 
-	std::vector<DYNAMIC_ENTITY_PTR> m_EnityList;
+	//std::vector<DYNAMIC_ENTITY_PTR> m_EnityList;
+
+	GameObjects * m_gameObjects;
 
 	std::shared_ptr<Cube> cube;
 

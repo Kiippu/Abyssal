@@ -70,6 +70,9 @@
     <Filter Include="Core\Node\Derivatives\Shapes">
       <UniqueIdentifier>{657d6f7b-4b2f-4f85-856f-f4f1ab5c3141}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFlow\GameObjects">
+      <UniqueIdentifier>{5fa56dcc-7f79-43ff-853a-9a28a39b3699}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Events\EventHandler.cpp">
@@ -119,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="Core\Render\Model.cpp">
       <Filter>Core\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFlow\GameObjects\GameObjects.cpp">
+      <Filter>GameFlow\GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="Core\Component\Derivative\Render\Model3D.h">
       <Filter>Core\Component\Derivatives\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\GameObjects\GameObjects.h">
+      <Filter>GameFlow\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
