@@ -3,7 +3,7 @@
 #include "GameFlow/Updater/MasterUpdate.h"
 #include "Core/Node/Derivative/DynamicEntityNode.h"
 #include "Core/Events/EventHandler.h"
-#include "Core/Render/Renderer.h"
+#include "Core/Render/Renderer3D.h"
 #include "Core/Render/Model.h"
 #include "Core/Math/Math.h"
 #include "Core/Node/Derivative/Shape/Cube.h"
@@ -55,7 +55,7 @@ void MasterUpdate::Update()
 				
 				auto & model = model3D.getModel();
 
-				Renderer::getInstance().Render(model);
+				Renderer3D::getInstance().Render(model);
 			}
 		}
 

@@ -1,16 +1,16 @@
 #pragma once
 
-//#include "Core/Render/Renderer.h"
+//#include "Core/Render/Renderer3D.h"
 //#include "Core/Events/EventHandler.h"
 //#include <memory>
 //#include <iostream>
 
 //class UpdaterGameLoop;
 //class EventHandler;
-//class Renderer;
+//class Renderer3D;
 #include <memory>
 
-class Renderer;
+class Renderer3D;
 class MasterUpdate;
 class Model;
 
@@ -32,19 +32,11 @@ private:
 
 	void RunGameLoop();
 
+	void Factories();
+
 	MasterUpdate * m_masterUpdate;
 
-	Renderer * m_renderer;
-
-	// Handles a single model with its vertexes and matrix
-	//std::unique_ptr<Model> m_model;
-
-	// Handles all our SDL2 event ( quit, keydown, ++ )
-	/*std::unique_ptr<EventHandler> m_handler = std::make_unique<EventHandler>();
-	std::unique_ptr<Renderer> m_renderer = std::make_unique<Renderer>();
-*/
-	// Handles everything related to OpenGL
-	 //m_renderer;
+	Renderer3D * m_renderer;
 
 public:
 	// Safety to delete any copies or new instances
@@ -52,12 +44,6 @@ public:
 	void operator=(GameManager const&) = delete;
 
 	void initGameEngine();
-
-	// Scene manager
-
-	//r
-
-	//bool InitEngine();
 
 };
 

@@ -1,9 +1,9 @@
 
-#include "Core/Render/Renderer.h"
+#include "Core/Render/Renderer3D.h"
 
-// Headerphile - Renderer.h
+// Headerphile - Renderer3D.h
 //
-// This file controls most things related to the Renderer. 
+// This file controls most things related to the Renderer3D. 
 // Put in a separate class to avoid code cluttering
 
 #pragma once
@@ -28,7 +28,7 @@ std::string programName = "Headerphile SDL2 - OpenGL thing";
 #include <glm/glm.hpp>
 #include <SDL.h>
 
-Renderer::Renderer()
+Renderer3D::Renderer3D()
 {
 	m_gameObjects = &GameObjects::getInstance();
 
@@ -58,9 +58,9 @@ Renderer::Renderer()
 }
 
 
-void Renderer::Render(Model & model)
+void Renderer3D::Render(Model & model)
 {
-	// Tell Renderer to clear everything
+	// Tell Renderer3D to clear everything
 	RenderStart();
 
 	
@@ -71,11 +71,11 @@ void Renderer::Render(Model & model)
 	// Render our model
 	RenderModel(model);
 
-	// Tell our Renderer to swap the buffers
+	// Tell our Renderer3D to swap the buffers
 	RenderEnd();
 }
 
-bool Renderer::Init()
+bool Renderer3D::Init()
 {
 	// Initialize SDL's Video subsystem
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -118,7 +118,7 @@ bool Renderer::Init()
 	return true;
 }
 
-bool Renderer::RenderSetup()
+bool Renderer3D::RenderSetup()
 {
 	if (!Init())
 		return false;
@@ -155,12 +155,12 @@ bool Renderer::RenderSetup()
 	return true;
 }
 
-bool Renderer::RegisterObjects()
+bool Renderer3D::RegisterObjects()
 {
 	return false; 
 }
 
-bool Renderer::SetUpShader(const std::string & vertex, const std::string & fragment)
+bool Renderer3D::SetUpShader(const std::string & vertex, const std::string & fragment)
 {
 	auto dynamicList = m_gameObjects->getAllDynamicObjects();
 	for (auto & obj : dynamicList)
@@ -191,7 +191,7 @@ bool Renderer::SetUpShader(const std::string & vertex, const std::string & fragm
 	return true;
 }
 
-void Renderer::RenderStart()
+void Renderer3D::RenderStart()
 {
 	// Make our background black
 	glClearColor(0.5, 0.5, 0.5, 1.0);
@@ -200,29 +200,29 @@ void Renderer::RenderStart()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::RenderModel(const Model & model)
+void Renderer3D::RenderModel(const Model & model)
 {
 	model.Render();
 }
 
-void Renderer::RenderEnd()
+void Renderer3D::RenderEnd()
 {
 	// Swap our buffers to make our changes visible
 	SDL_GL_SwapWindow(mainWindow);
 }
 
-void Renderer::SetMatrix(const glm::mat4 & model, Shader & shader)
+void Renderer3D::SetMatrix(const glm::mat4 & model, Shader & shader)
 {
 	glm::mat4 mvp = projection * view  * model;
 	shader.SetMatrix(mvp);
 }
 
-void Renderer::SetShader(Model & m)
+void Renderer3D::SetShader(Model & m)
 {
 	m.SetShader(m.GetShader());
 }
 
-void Renderer::Cleanup()
+void Renderer3D::Cleanup()
 {
 	auto dynamicList = m_gameObjects->getAllDynamicObjects();
 	for (auto & obj : dynamicList)
@@ -248,7 +248,7 @@ void Renderer::Cleanup()
 	SDL_Quit();
 }
 
-void Renderer::CheckSDLError(int line)
+void Renderer3D::CheckSDLError(int line)
 {
 	std::string error = SDL_GetError();
 
@@ -263,7 +263,7 @@ void Renderer::CheckSDLError(int line)
 	}
 }
 
-void Renderer::SetOpenGLOptions()
+void Renderer3D::SetOpenGLOptions()
 {
 	// Enable blending so that we can have transparanet object
 	glEnable(GL_BLEND);
@@ -274,7 +274,7 @@ void Renderer::SetOpenGLOptions()
 	glDepthFunc(GL_LEQUAL);
 }
 
-bool Renderer::SetSDL_GL_Attributes()
+bool Renderer3D::SetSDL_GL_Attributes()
 {
 	// Set our OpenGL version.
 		// SDL_GL_CONTEXT_CORE gives us only the newer version, deprecated functions are disabled

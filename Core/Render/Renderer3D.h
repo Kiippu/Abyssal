@@ -1,6 +1,6 @@
-// Headerphile - Renderer.h
+// Headerphile - Renderer3D.h
 //
-// This file controls most things related to the Renderer. 
+// This file controls most things related to the Renderer3D. 
 // Put in a separate class to avoid code cluttering
 
 #pragma once
@@ -24,25 +24,24 @@ class Model;
 class Shader;
 class GameObjects;
 
-class Renderer
+class Renderer3D
 {
 public:
-	static Renderer & getInstance() {
-		static Renderer instance;
+	static Renderer3D & getInstance() {
+		static Renderer3D instance;
 		return instance;
 	}
 
 private:
 	// private constructor to impl singleton
-	Renderer();
+	Renderer3D();
 
 public:
 	// Safety to delete any copies or new instances
-	Renderer(const Renderer&) = delete;
-	void operator=(Renderer const&) = delete;
+	Renderer3D(const Renderer3D&) = delete;
+	void operator=(Renderer3D const&) = delete;
 
 	void Render(Model & model);
-
 
 	bool RenderSetup();
 
@@ -58,7 +57,6 @@ public:
 	void RenderEnd();
 
 	void SetMatrix(const glm::mat4 &model, Shader & shader);
-
 
 	void Cleanup();
 

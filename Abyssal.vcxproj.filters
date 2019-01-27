@@ -90,9 +90,6 @@
     <ClCompile Include="Abyssal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Core\Render</Filter>
-    </ClCompile>
     <ClCompile Include="GameFlow\GameManager.cpp">
       <Filter>GameFlow</Filter>
     </ClCompile>
@@ -126,15 +123,15 @@
     <ClCompile Include="GameFlow\GameObjects\GameObjects.cpp">
       <Filter>GameFlow\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer3D.cpp">
+      <Filter>Core\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Events\EventHandler.h">
       <Filter>Core\Events</Filter>
     </ClInclude>
     <ClInclude Include="Core\Render\Model.h">
-      <Filter>Core\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Render\Renderer.h">
       <Filter>Core\Render</Filter>
     </ClInclude>
     <ClInclude Include="Core\Math\Math.h">
@@ -199,6 +196,9 @@
     </ClInclude>
     <ClInclude Include="GameFlow\GameObjects\GameObjects.h">
       <Filter>GameFlow\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Render\Renderer3D.h">
+      <Filter>Core\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
