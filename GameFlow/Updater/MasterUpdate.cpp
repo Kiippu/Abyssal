@@ -18,14 +18,14 @@ MasterUpdate::MasterUpdate()
 	m_eventHandler = &EventHandler::getInstance();
 	//model = std::make_shared<Model>();
 
-	cube = std::make_shared<Cube>();
+	/*cube = std::make_shared<Cube>();
 	
 	cube->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 	
 
 	std::shared_ptr<Node> node = std::dynamic_pointer_cast<Node>(cube);
 
-	m_gameObjects->RegisterWorldObject(node);
+	m_gameObjects->RegisterWorldObject(node);*/
 	//m_EnityList.push_back(cube);
 
 

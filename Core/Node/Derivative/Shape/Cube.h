@@ -19,6 +19,7 @@ public:
 
 	bool Update();
 
+
 private:
 
 	//std::unique_ptr<Model> m_model;

@@ -12,6 +12,11 @@ GameObjects::GameObjects()
 
 
 
+std::vector<std::shared_ptr<Node>>& GameObjects::getAllObjects()
+{
+	return m_worldObjects;
+}
+
 std::vector< std::shared_ptr<DynamicEntityNode>>& GameObjects::getAllDynamicObjects()
 {
 	return m_worldDynamicObjects;

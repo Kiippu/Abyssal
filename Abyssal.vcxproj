@@ -26,12 +26,14 @@
     <ClCompile Include="Core\Component\Derivative\Render\Model3D.cpp" />
     <ClCompile Include="Core\Containers\Container.cpp" />
     <ClCompile Include="Core\Events\EventHandler.cpp" />
+    <ClCompile Include="Core\IO\FileSystemHelper.cpp" />
     <ClCompile Include="Core\Node\Derivative\DynamicEntityNode.cpp" />
     <ClCompile Include="Core\Node\Derivative\Shape\Cube.cpp" />
     <ClCompile Include="Core\Node\Derivative\StaticEntityNode.cpp" />
     <ClCompile Include="Core\Node\Node.cpp" />
     <ClCompile Include="Abyssal.cpp" />
     <ClCompile Include="Core\Render\Model.cpp" />
+    <ClCompile Include="GameFlow\Factories\EntityFactory.cpp" />
     <ClCompile Include="GameFlow\GameManager.cpp" />
     <ClCompile Include="GameFlow\GameObjects\GameObjects.cpp" />
     <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp" />
@@ -49,6 +51,7 @@
     <ClInclude Include="Core\Containers\ContainerSort.h" />
     <ClInclude Include="Core\Containers\PriorityType.h" />
     <ClInclude Include="Core\Events\EventHandler.h" />
+    <ClInclude Include="Core\IO\FileSystemHelper.h" />
     <ClInclude Include="Core\Math\Math.h" />
     <ClInclude Include="Core\Node\Derivative\DynamicEntityNode.h" />
     <ClInclude Include="Core\Node\Derivative\Shape\Cube.h" />
@@ -59,6 +62,7 @@
     <ClInclude Include="Core\Render\Model.h" />
     <ClInclude Include="Core\Render\Renderer3D.h" />
     <ClInclude Include="Core\Render\Shader\Shader.h" />
+    <ClInclude Include="GameFlow\Factories\EntityFactory.h" />
     <ClInclude Include="GameFlow\GameManager.h" />
     <ClInclude Include="GameFlow\GameObjects\GameObjects.h" />
     <ClInclude Include="GameFlow\Updater\MasterUpdate.h" />

@@ -6,13 +6,10 @@
 EventHandler * m_eventHandler = &EventHandler::getInstance();
 
 Cube::Cube()
-{
-}
-
+{}
 
 Cube::~Cube()
-{
-}
+{}
 
 bool Cube::Update()
 {
@@ -49,8 +46,6 @@ bool Cube::Update()
 			 }
 		 }
 	 }
-	 
-
-
 	return true;
 }
+

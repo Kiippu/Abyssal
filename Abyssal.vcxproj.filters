@@ -73,6 +73,12 @@
     <Filter Include="GameFlow\GameObjects">
       <UniqueIdentifier>{5fa56dcc-7f79-43ff-853a-9a28a39b3699}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFlow\Factories">
+      <UniqueIdentifier>{c951c3ad-db37-44b7-872c-c686b11f86c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{902b9df9-6aa6-4aea-acf0-ffe6b4f805e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Events\EventHandler.cpp">
@@ -125,6 +131,12 @@
     </ClCompile>
     <ClCompile Include="Renderer3D.cpp">
       <Filter>Core\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFlow\Factories\EntityFactory.cpp">
+      <Filter>GameFlow\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\IO\FileSystemHelper.cpp">
+      <Filter>Core\IO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +211,12 @@
     </ClInclude>
     <ClInclude Include="Core\Render\Renderer3D.h">
       <Filter>Core\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Factories\EntityFactory.h">
+      <Filter>GameFlow\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\IO\FileSystemHelper.h">
+      <Filter>Core\IO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

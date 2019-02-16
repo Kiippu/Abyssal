@@ -1,6 +1,8 @@
 #include "Node.h"
 #include <iostream>
 
+#include "GameFlow/Factories/EntityFactory.h"
+
 ID_NODE_TYPE Node::nextIdForNode = 0;
 
 Node::Node(LABEL_NODE_TYPE lnt)
@@ -35,4 +37,12 @@ CONTAINER_PTR const Node::GetComponentContainer() const
 //	for (auto comp : comp_container->GetContainerList()) {
 //		comp->Update();
 //	}
+//}
+
+//bool Node::RegisterDescripter(std::string key, Descriptor desc)
+//{
+//	auto factory = &EntityFactory::getInstance();
+//	factory->RegisterDescripter(key,desc);
+//
+//	return true;
 //}
