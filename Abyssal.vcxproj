@@ -33,6 +33,7 @@
     <ClCompile Include="Core\Node\Node.cpp" />
     <ClCompile Include="Abyssal.cpp" />
     <ClCompile Include="Core\Render\Model.cpp" />
+    <ClCompile Include="GameFlow\Factories\ComponentFactory.cpp" />
     <ClCompile Include="GameFlow\Factories\EntityFactory.cpp" />
     <ClCompile Include="GameFlow\GameManager.cpp" />
     <ClCompile Include="GameFlow\GameObjects\GameObjects.cpp" />
@@ -62,10 +63,12 @@
     <ClInclude Include="Core\Render\Model.h" />
     <ClInclude Include="Core\Render\Renderer3D.h" />
     <ClInclude Include="Core\Render\Shader\Shader.h" />
+    <ClInclude Include="GameFlow\Factories\ComponentFactory.h" />
     <ClInclude Include="GameFlow\Factories\EntityFactory.h" />
     <ClInclude Include="GameFlow\GameManager.h" />
     <ClInclude Include="GameFlow\GameObjects\GameObjects.h" />
     <ClInclude Include="GameFlow\Updater\MasterUpdate.h" />
+    <ClInclude Include="IFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Core\Render\Shader\Fragment\frag.glsl" />

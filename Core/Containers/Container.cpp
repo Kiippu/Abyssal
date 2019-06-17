@@ -10,8 +10,10 @@
 
 /*
 TODO:
-- add all components to switch
-- 
+- link components to map keys, string?
+- Component factory needed - this class needs to use factory to create components and them them to container
+	- components add themselves to the container
+	- entitys need to call componets from file.
 
 
 */

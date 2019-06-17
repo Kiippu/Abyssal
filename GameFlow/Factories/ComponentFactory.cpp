@@ -1,12 +1,12 @@
-#include "EntityFactory.h"
+#include "ComponentFactory.h"
 
 
-EntityFactory::EntityFactory()
+ComponentFactory::ComponentFactory()
 {
 	setMasterPath("Data/Entities/EntityList.txt");
 }
 
-bool EntityFactory::ImportEntities()
+bool ComponentFactory::ImportEntities()
 {
 	std::string data = getFileSystemHelper()->ReadFile(getMasterPath().string().c_str());
 
@@ -16,14 +16,13 @@ bool EntityFactory::ImportEntities()
 	for (auto & singleLine : line)
 	{
 
-		printf("entity-singleLine: %s\n", singleLine.c_str());
+		printf("component-singleLine: %s\n", singleLine.c_str());
 		std::vector<std::string> word = split(data, ' ');
 
-		printf("entity: %s\n", word[0].c_str());
+		printf("component: %s\n", word[0].c_str());
 		//std::cout << word[word.size()-1] << std::endl;
 
-		//TODO: SERIALIZE FILE DATA for entities!
-		// CALL COMPONENT FACTORY!
+		// TODO: INSERT SERIALIZATION OF COMPoNENTS
 	}
 
 

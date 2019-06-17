@@ -138,6 +138,9 @@
     <ClCompile Include="Core\IO\FileSystemHelper.cpp">
       <Filter>Core\IO</Filter>
     </ClCompile>
+    <ClCompile Include="GameFlow\Factories\ComponentFactory.cpp">
+      <Filter>GameFlow\Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Events\EventHandler.h">
@@ -217,6 +220,12 @@
     </ClInclude>
     <ClInclude Include="Core\IO\FileSystemHelper.h">
       <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Factories\ComponentFactory.h">
+      <Filter>GameFlow\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="IFactory.h">
+      <Filter>GameFlow\Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
