@@ -9,7 +9,7 @@
 
 #include "GameFlow/GameObjects/GameObjects.h"
 
-class EventHandler;
+class InputEventHandler;
 class DynamicEntityNode;
 class Cube;
 
@@ -28,7 +28,7 @@ private:
 	// private constructor to impl singleton
 	MasterUpdate();
 
-	EventHandler * m_eventHandler;
+	InputEventHandler * m_eventHandler;
 
 	//Model model;
 

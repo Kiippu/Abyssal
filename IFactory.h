@@ -12,7 +12,7 @@
 #include <vector>
 #include <iterator>
 
-#include "Core/IO/FileSystemHelper.h"
+#include "Core/framework/IO/FileSystemHelper.h"
 #include "GameFlow/GameObjects/GameObjects.h"
 
 class FileSystemHelper;
@@ -33,7 +33,7 @@ private:
 
 public:
 
-	virtual bool ImportEntities() = 0;
+	virtual unsigned create(std::string) = 0;
 
 	virtual void setMasterPath(path filePath) { m_path = filePath; };
 	virtual const path& getMasterPath() { return m_path; };

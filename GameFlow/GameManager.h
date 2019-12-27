@@ -1,12 +1,12 @@
 #pragma once
 
 //#include "Core/Render/Renderer3D.h"
-//#include "Core/Events/EventHandler.h"
+//#include "Core/Events/InputEventHandler.h"
 //#include <memory>
 //#include <iostream>
 
 //class UpdaterGameLoop;
-//class EventHandler;
+//class InputEventHandler;
 //class Renderer3D;
 #include <memory>
 

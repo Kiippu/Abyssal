@@ -11,7 +11,7 @@ public:
 	DynamicEntityNode();
 	~DynamicEntityNode();
 
-	virtual bool Update() = 0;
+	bool Update();
 
 private:
 

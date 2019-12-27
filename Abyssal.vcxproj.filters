@@ -16,38 +16,11 @@
     <Filter Include="Core">
       <UniqueIdentifier>{9f32c115-8944-4efe-9c77-aea8965eef9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component">
-      <UniqueIdentifier>{47b7a24d-9790-4e07-83fc-c05e3dbf1ec7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Component\Derivatives">
-      <UniqueIdentifier>{7abbbc3b-e963-4bc5-9956-27537c2915bb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Node">
       <UniqueIdentifier>{66736bd3-2106-4b71-bfdb-9e3814676e85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Container">
-      <UniqueIdentifier>{7a1d9b9c-d241-498d-ab9a-83bc9347005c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Node\Derivatives">
       <UniqueIdentifier>{ca450904-577d-4cc0-a780-95f50f093896}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Render">
-      <UniqueIdentifier>{5448643d-2362-475e-9807-32a87ee61f8d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Render\Shader">
-      <UniqueIdentifier>{86c27fdb-36a8-4372-80c0-fd4cafeedac1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Render\Shader\Fragment">
-      <UniqueIdentifier>{fb9e30d3-c977-4304-919a-b5b417bddf08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Render\Shader\Vertex">
-      <UniqueIdentifier>{012ed42c-b20c-4d25-a32b-a7cf802eae47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Render\Shader\Geometry">
-      <UniqueIdentifier>{c40ddb02-9dbf-44cb-bf7c-eb16b026b8fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Events">
-      <UniqueIdentifier>{1eb2a76b-6281-468a-af00-671bf51feeab}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\MathHelpers">
       <UniqueIdentifier>{29686cf2-3c36-4367-85a2-f15eeafffeb3}</UniqueIdentifier>
@@ -61,12 +34,6 @@
     <Filter Include="GameFlow\Updater">
       <UniqueIdentifier>{5f2bf42b-33e0-4976-ae1b-b66c8499b81b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\Derivatives\Render">
-      <UniqueIdentifier>{59db0e74-5125-49f7-b088-3019d371a093}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Component\Derivatives\IO">
-      <UniqueIdentifier>{b944c81b-cf06-4890-863c-5bdb518122e1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Node\Derivatives\Shapes">
       <UniqueIdentifier>{657d6f7b-4b2f-4f85-856f-f4f1ab5c3141}</UniqueIdentifier>
     </Filter>
@@ -76,20 +43,50 @@
     <Filter Include="GameFlow\Factories">
       <UniqueIdentifier>{c951c3ad-db37-44b7-872c-c686b11f86c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\IO">
+    <Filter Include="Core\Famwork">
+      <UniqueIdentifier>{e31a7b83-c05d-4e3b-bdd7-7323842c3c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Render">
+      <UniqueIdentifier>{5448643d-2362-475e-9807-32a87ee61f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Render\Shader">
+      <UniqueIdentifier>{86c27fdb-36a8-4372-80c0-fd4cafeedac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Render\Shader\Fragment">
+      <UniqueIdentifier>{fb9e30d3-c977-4304-919a-b5b417bddf08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Render\Shader\Vertex">
+      <UniqueIdentifier>{012ed42c-b20c-4d25-a32b-a7cf802eae47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Render\Shader\Geometry">
+      <UniqueIdentifier>{c40ddb02-9dbf-44cb-bf7c-eb16b026b8fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\IO">
       <UniqueIdentifier>{902b9df9-6aa6-4aea-acf0-ffe6b4f805e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Events">
+      <UniqueIdentifier>{1eb2a76b-6281-468a-af00-671bf51feeab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Component">
+      <UniqueIdentifier>{47b7a24d-9790-4e07-83fc-c05e3dbf1ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Component\Derivatives">
+      <UniqueIdentifier>{7abbbc3b-e963-4bc5-9956-27537c2915bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Component\Derivatives\Render">
+      <UniqueIdentifier>{59db0e74-5125-49f7-b088-3019d371a093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Component\Derivatives\IO">
+      <UniqueIdentifier>{b944c81b-cf06-4890-863c-5bdb518122e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Node\Container">
+      <UniqueIdentifier>{7a1d9b9c-d241-498d-ab9a-83bc9347005c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Famwork\Threading">
+      <UniqueIdentifier>{95075b5d-6df1-4cdc-9452-762f72a0e482}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\Events\EventHandler.cpp">
-      <Filter>Core\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\Component.cpp">
-      <Filter>Core\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Containers\Container.cpp">
-      <Filter>Core\Container</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Node\Node.cpp">
       <Filter>Core\Node</Filter>
     </ClCompile>
@@ -102,15 +99,6 @@
     <ClCompile Include="GameFlow\Updater\MasterUpdate.cpp">
       <Filter>GameFlow\Updater</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\IO\ReadWrite.cpp">
-      <Filter>Core\Component\Derivatives\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\Render\AnimatedSprite.cpp">
-      <Filter>Core\Component\Derivatives\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\ComponentUpdatable.cpp">
-      <Filter>Core\Component\Derivatives</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Node\Derivative\DynamicEntityNode.cpp">
       <Filter>Core\Node\Derivatives</Filter>
     </ClCompile>
@@ -120,55 +108,67 @@
     <ClCompile Include="Core\Node\Derivative\Shape\Cube.cpp">
       <Filter>Core\Node\Derivatives\Shapes</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\Derivative\Render\Model3D.cpp">
-      <Filter>Core\Component\Derivatives\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Render\Model.cpp">
-      <Filter>Core\Render</Filter>
-    </ClCompile>
     <ClCompile Include="GameFlow\GameObjects\GameObjects.cpp">
       <Filter>GameFlow\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer3D.cpp">
-      <Filter>Core\Render</Filter>
     </ClCompile>
     <ClCompile Include="GameFlow\Factories\EntityFactory.cpp">
       <Filter>GameFlow\Factories</Filter>
     </ClCompile>
-    <ClCompile Include="Core\IO\FileSystemHelper.cpp">
-      <Filter>Core\IO</Filter>
-    </ClCompile>
     <ClCompile Include="GameFlow\Factories\ComponentFactory.cpp">
       <Filter>GameFlow\Factories</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Framework\IO\FileSystemHelper.cpp">
+      <Filter>Core\Famwork\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Render\Model.cpp">
+      <Filter>Core\Famwork\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Render\Renderer3D.cpp">
+      <Filter>Core\Famwork\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\IO\ReadWrite.cpp">
+      <Filter>Core\Node\Component\Derivatives\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\Render\AnimatedSprite.cpp">
+      <Filter>Core\Node\Component\Derivatives\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\Render\Model3D.cpp">
+      <Filter>Core\Node\Component\Derivatives\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\ComponentUpdatable.cpp">
+      <Filter>Core\Node\Component\Derivatives</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Component.cpp">
+      <Filter>Core\Node\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Containers\Container.cpp">
+      <Filter>Core\Node\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Threading\ThreadSpool.cpp">
+      <Filter>Core\Famwork\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Threading\ThreadScheduler.cpp">
+      <Filter>Core\Famwork\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Events\SimpleEvent.cpp">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Events\IEvent.cpp">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\componentLabelConverter.cpp">
+      <Filter>Core\Node\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Events\InputEventHandler.cpp">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\IO\inputHandler.cpp">
+      <Filter>Core\Node\Component\Derivatives\IO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Core\Events\EventHandler.h">
-      <Filter>Core\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Render\Model.h">
-      <Filter>Core\Render</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Math\Math.h">
       <Filter>Core\MathHelpers</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Render\Shader\Shader.h">
-      <Filter>Core\Render\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\Component.h">
-      <Filter>Core\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\ComponentHeaders.h">
-      <Filter>Core\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\ComponentTypes.h">
-      <Filter>Core\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Containers\Container.h">
-      <Filter>Core\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Containers\ContainerSort.h">
-      <Filter>Core\Container</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\Node.h">
       <Filter>Core\Node</Filter>
@@ -179,23 +179,11 @@
     <ClInclude Include="Core\Node\NodeHeaders.h">
       <Filter>Core\Node</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Containers\PriorityType.h">
-      <Filter>Core\Container</Filter>
-    </ClInclude>
     <ClInclude Include="GameFlow\GameManager.h">
       <Filter>GameFlow</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\Updater\MasterUpdate.h">
       <Filter>GameFlow\Updater</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\IO\ReadWrite.h">
-      <Filter>Core\Component\Derivatives\IO</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\Render\AnimatedSprite.h">
-      <Filter>Core\Component\Derivatives\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\ComponentUpdatable.h">
-      <Filter>Core\Component\Derivatives</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\Derivative\DynamicEntityNode.h">
       <Filter>Core\Node\Derivatives</Filter>
@@ -206,20 +194,11 @@
     <ClInclude Include="Core\Node\Derivative\Shape\Cube.h">
       <Filter>Core\Node\Derivatives\Shapes</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Component\Derivative\Render\Model3D.h">
-      <Filter>Core\Component\Derivatives\Render</Filter>
-    </ClInclude>
     <ClInclude Include="GameFlow\GameObjects\GameObjects.h">
       <Filter>GameFlow\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Render\Renderer3D.h">
-      <Filter>Core\Render</Filter>
-    </ClInclude>
     <ClInclude Include="GameFlow\Factories\EntityFactory.h">
       <Filter>GameFlow\Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\IO\FileSystemHelper.h">
-      <Filter>Core\IO</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\Factories\ComponentFactory.h">
       <Filter>GameFlow\Factories</Filter>
@@ -227,22 +206,93 @@
     <ClInclude Include="IFactory.h">
       <Filter>GameFlow\Factories</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Framework\IO\FileSystemHelper.h">
+      <Filter>Core\Famwork\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Render\Model.h">
+      <Filter>Core\Famwork\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Render\Renderer3D.h">
+      <Filter>Core\Famwork\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Render\Shader\Shader.h">
+      <Filter>Core\Famwork\Render\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\IO\ReadWrite.h">
+      <Filter>Core\Node\Component\Derivatives\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\Render\AnimatedSprite.h">
+      <Filter>Core\Node\Component\Derivatives\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\Render\Model3D.h">
+      <Filter>Core\Node\Component\Derivatives\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\ComponentUpdatable.h">
+      <Filter>Core\Node\Component\Derivatives</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Component.h">
+      <Filter>Core\Node\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\ComponentHeaders.h">
+      <Filter>Core\Node\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\ComponentTypes.h">
+      <Filter>Core\Node\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Containers\Container.h">
+      <Filter>Core\Node\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Containers\ContainerSort.h">
+      <Filter>Core\Node\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Containers\PriorityType.h">
+      <Filter>Core\Node\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\ThreadScheduler.h">
+      <Filter>Core\Famwork\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\ThreadSpool.h">
+      <Filter>Core\Famwork\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\Fiber.h">
+      <Filter>Core\Famwork\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Events\SimpleEvent.h">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Events\IEvent.h">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\componentLabelConverter.h">
+      <Filter>Core\Node\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Events\InputEventHandler.h">
+      <Filter>Core\Famwork\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\IO\inputHandler.h">
+      <Filter>Core\Node\Component\Derivatives\IO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Core\Render\Shader\Fragment\frag.glsl">
-      <Filter>Core\Render\Shader\Fragment</Filter>
+    <Text Include="ToDo.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Framework\Render\Shader\Fragment\frag.glsl">
+      <Filter>Core\Famwork\Render\Shader\Fragment</Filter>
     </None>
-    <None Include="Core\Render\Shader\Fragment\frag0.glsl">
-      <Filter>Core\Render\Shader\Fragment</Filter>
+    <None Include="Core\Framework\Render\Shader\Fragment\frag0.glsl">
+      <Filter>Core\Famwork\Render\Shader\Fragment</Filter>
     </None>
-    <None Include="Core\Render\Shader\Geometry\geom.glsl">
-      <Filter>Core\Render\Shader\Geometry</Filter>
+    <None Include="Core\Framework\Render\Shader\Geometry\geom.glsl">
+      <Filter>Core\Famwork\Render\Shader\Geometry</Filter>
     </None>
-    <None Include="Core\Render\Shader\Vertex\vert.glsl">
-      <Filter>Core\Render\Shader\Vertex</Filter>
+    <None Include="Core\Framework\Render\Shader\Vertex\vert.glsl">
+      <Filter>Core\Famwork\Render\Shader\Vertex</Filter>
     </None>
-    <None Include="Core\Render\Shader\Vertex\vert0.glsl">
-      <Filter>Core\Render\Shader\Vertex</Filter>
+    <None Include="Core\Framework\Render\Shader\Vertex\vert0.glsl">
+      <Filter>Core\Famwork\Render\Shader\Vertex</Filter>
     </None>
   </ItemGroup>
 </Project>

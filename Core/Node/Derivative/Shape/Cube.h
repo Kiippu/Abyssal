@@ -7,7 +7,7 @@
 
 //Engine includes
 #include "Core/Node/Derivative/DynamicEntityNode.h"
-#include "Core/Render/Model.h"
+#include "Core/Framework/Render/Model.h"
 
 class Model;
 

@@ -2,20 +2,20 @@
 
 #include "GameFlow/Updater/MasterUpdate.h"
 #include "Core/Node/Derivative/DynamicEntityNode.h"
-#include "Core/Events/EventHandler.h"
-#include "Core/Render/Renderer3D.h"
-#include "Core/Render/Model.h"
-#include "Core/Math/Math.h"
+#include "Core/Framework/Events/InputEventHandler.h"
+#include "Core/Framework/Render/Renderer3D.h"
+#include "Core/Framework/Render/Model.h"
+#include "Core/MathHelpers/Math/Math.h"
 #include "Core/Node/Derivative/Shape/Cube.h"
 
 #include "Core/Node/Derivative/Shape/Cube.h"
 
-#include "Core/Component/Derivative/Render/Model3D.h"
+#include "Core/node/Component/Derivative/Render/Model3D.h"
 
 MasterUpdate::MasterUpdate()
 {
 	m_gameObjects = &GameObjects::getInstance();
-	m_eventHandler = &EventHandler::getInstance();
+	m_eventHandler = &InputEventHandler::getInstance();
 	//model = std::make_shared<Model>();
 
 	/*cube = std::make_shared<Cube>();

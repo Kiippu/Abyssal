@@ -4,7 +4,7 @@
 #include <functional>
 #include <vector>
 
-#include "Core/Render/Model.h"
+#include "Core/Framework/Render/Model.h"
 
 #include "GameFlow/GameManager.h"
 #include "GameFlow/Factories/EntityFactory.h"
@@ -62,7 +62,9 @@ T & Descriptor<T>::getDescriptor()
 
 int main(int argc, char *argv[])
 {
-	std::function<bool()> glambda = [&]()
+	EntityFactory::getInstance();
+	/// last runnig  code
+	/*std::function<bool()> glambda = [&]()
 	{ 
 		GameObjects * m_gameObjects = &GameObjects::getInstance();
 
@@ -87,8 +89,8 @@ int main(int argc, char *argv[])
 
 	cont.push_back(myobject);
 
-	cont[0]->createNode();
-
+	cont[0]->createNode();*/
+	/// till here #####
 	//DE * bill = container[0];
 
 
@@ -113,9 +115,6 @@ int main(int argc, char *argv[])
 
 	/*auto funnn = myobject.createNode();
 	funnn();*/
-
-
-	EntityFactory::getInstance().ImportEntities();
 
 	initGame->initGameEngine();
 

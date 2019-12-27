@@ -1,8 +1,8 @@
 #include "GameManager.h"
 
 #include "GameFlow\Updater\MasterUpdate.h"
-#include "Core/Render/Renderer3D.h"
-#include "Core/Render/Model.h"
+#include "Core/Framework/Render/Renderer3D.h"
+#include "Core/Framework/Render/Model.h"
 
 #include <memory>
 
