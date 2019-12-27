@@ -1,0 +1,18 @@
+Core/Framework
+ - Events system
+ - threading system
+ - keyboard device
+ - Update system
+ - Interface Classes
+ - Rendering System
+ - ERROR LOGGING marcos
+
+
+ Node
+  - more general
+  - remove cube - replace with general shape geometry
+  - 
+
+
+  did:
+   - input component functioanlity done. nees to have add() function configured

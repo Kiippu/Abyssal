@@ -1,2 +1,7 @@
 .vs
 Debug
+/x64/Release/Abyssal.tlog/*.lastbuildstate
+/x64/Release/Abyssal.tlog/*.tlog
+/x64/Release/Abyssal.tlog/*
+/x64/Release/*.obj
+/x64/Release/*.pdb
