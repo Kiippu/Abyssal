@@ -3,14 +3,21 @@
 #include "Core/node/Component/Derivative/Render/Model3D.h"
 #include "GameFlow/Updater/MasterUpdate.h"
 #include "Core/Framework/Render/Model.h"
+#include <functional>
 
 #include <iostream>
 
+struct Model3D::PImpl
+{
+	PImpl()
+	{}
+};
+
+
 Model3D::Model3D()
 	:ComponentUpdatable( LABEL_COMPONENT_TYPE::COMP_MODEL3D, LABEL_PRIORITY_TYPE::PRTY_HIGH, "3dModel")
+	, m_impl(new PImpl)
 {
-	//m_model = std::make_unique<Model>();
-	std::cout << "constructor - model3D" << std::endl;
 }
 
 Model3D::~Model3D()

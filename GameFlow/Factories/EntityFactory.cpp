@@ -11,6 +11,7 @@ EntityFactory::EntityFactory()
 	setMasterPath("Data/Entities/EntityList.txt");
 	ImportEntities();
 	create("cube_geometry");
+
 }
 
 bool EntityFactory::ImportEntities()
@@ -90,12 +91,14 @@ unsigned EntityFactory::create(std::string key)
 		else if(descriptor->type == "static") {
 			node = std::make_shared<DynamicEntityNode>();
 		}
-		//for (auto& comp : descriptor->components)
-		//{
-			//auto label = m_labelConverter->getLebel(comp);
-			node->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+		for (auto& comp : descriptor->components)
+		{
+			auto label = m_labelConverter->getLebel(comp);
+			node->GetComponentContainer()->AddComponent(label);
+			/*node->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 			node->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_READ_WRITE);
-		//}
+			node->GetComponentContainer()->AddComponent(LABEL_COMPONENT_TYPE::COMP_INPUT);*/
+		}
 
 		getGameObjects()->RegisterWorldObject(node);
 

@@ -2,6 +2,7 @@
 
 #include "Core/Framework/Events/InputEventHandler.h"
 #include "Core/Node/Component/Derivative/Render/Model3D.h"
+#include "Core/Node/Component/Derivative/IO/inputHandler.h"
 #include "Core/MathHelpers/Math/Math.h"
 
 #include  <iostream>
@@ -30,12 +31,17 @@ bool DynamicEntityNode::Update()
 		Model3D & modelComponent = dynamic_cast<Model3D&>(*component);
 		auto & model = modelComponent.getModel();
 
-		//Model model;
+		//update input component;
+		auto inputComponentPtr = GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_INPUT);
+		if (inputComponentPtr != nullptr) {
+			inputHandler & inputComponent = dynamic_cast<inputHandler&>(*inputComponentPtr);
+			inputComponent.Update();
+		}
 
-		if (m_eventHandler->IsKeyDown(SDLK_r))
+		/*if (m_eventHandler->IsKeyDown(SDLK_r))
 		{
 			model.ResetMatrix();
-		}
+		}*/
 		else
 		{
 			if (m_eventHandler->IsKeyDown(SDLK_LCTRL))

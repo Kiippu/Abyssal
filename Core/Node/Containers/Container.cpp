@@ -9,8 +9,13 @@
 
 //components
 //#include "Core/node/Component/Derivative/Render/AnimatedSprite.h"
-//#include "Core/node/Component/Derivative/IO/ReadWrite.h"
+#include "Core/node/Component/Derivative/IO/ReadWrite.h"
 #include "Core/node/Component/Derivative/Render/Model3D.h"
+#include "Core/node/Component/Derivative/IO/inputHandler.h"
+
+#include "GameFlow/Factories/ComponentFactory.h"
+#include "Core/Node/componentLabelConverter.h"
+
 
 //#include "Core/node/Component/ComponentHeaders.h"
 
@@ -25,9 +30,21 @@ TODO:
 
 */
 
-Container::Container()
+
+struct Container::PImpl
+{
+	PImpl()
+	{
+	}
+	// component Factory
+	ComponentFactory * m_componentFactory = &ComponentFactory::getInstance();
+	componentLabelConverter *m_labelConverter = &componentLabelConverter::getInstance();
+};
+
+Container::Container(Node* node) : m_impl(new PImpl)
 {
 	std::cout << "Container was created" << std::endl;
+	m_parentNode = node;
 }
 
 
@@ -78,30 +95,57 @@ void Container::AddComponent(LABEL_COMPONENT_TYPE ct)
 {
 	//COMPONENT_PTR newComponent;
 	if (!hasComponent(ct)) {
+
+		// imple function componet creation here
+		auto label = m_impl->m_labelConverter->getLabel(ct);
+		unsigned id = m_impl->m_componentFactory->create(label);
+
+		auto componentPair = m_impl->m_componentFactory->getComponetPair(id);
+		componentPair.second->SetParent(m_parentNode);
+		//auto component = *componentPair.second;
+		//COMPONENT_PTR component_ptr = std::make_shared<Component>(component);
+		ComponentContainer.push_back(componentPair.second);
+		//std::cout << "inputHandler created!" << std::endl;
+
+		/*auto itr = s_componentFactory.find(ct);
+		if (itr != s_componentFactory.end()) {
+			if (itr->second())
+				std::cout << "Container - added component " << this->GetComponent(ct)->GetComponentTypeString() << std::endl;
+		}*/
+		//
+
 		// Creates components depending on what component type is passed
-		switch (ct)
-		{
-			// Animated sprites
-		case(LABEL_COMPONENT_TYPE::COMP_ANIMATED_SPRITE): {
-			//newComponent = std::make_shared<AnimatedSprite>();
-			break;
-		}
-		case(LABEL_COMPONENT_TYPE::COMP_READ_WRITE): {
-			//newComponent = std::make_shared<ReadWrite>();
-			break;
-		}
-		case(LABEL_COMPONENT_TYPE::COMP_MODEL3D): {
-			auto newComponent = std::make_shared<Model3D>();
-			ComponentContainer.push_back(newComponent);
-			std::cout << "Model3D created!" << std::endl;
-			break;
-		}
-		default:
-			break;
-		}
+	//	switch (ct)
+	//	{
+	//		// Animated sprites
+	//	case(LABEL_COMPONENT_TYPE::COMP_ANIMATED_SPRITE): {
+	//		//newComponent = std::make_shared<AnimatedSprite>();
+	//		break;
+	//	}
+	//	case(LABEL_COMPONENT_TYPE::COMP_READ_WRITE): {
+	//		auto newComponent = std::make_shared<ReadWrite>();
+	//		ComponentContainer.push_back(newComponent);
+	//		std::cout << "ReadWrite created!" << std::endl;
+	//		break;
+	//	}
+	//	case(LABEL_COMPONENT_TYPE::COMP_INPUT): {
+	//		auto newComponent = std::make_shared<inputHandler>();
+	//		ComponentContainer.push_back(newComponent);
+	//		std::cout << "inputHandler created!" << std::endl;
+	//		break;
+	//	}
+	//	case(LABEL_COMPONENT_TYPE::COMP_MODEL3D): {
+	//		auto newComponent = std::make_shared<Model3D>();
+	//		ComponentContainer.push_back(newComponent);
+	//		std::cout << "Model3D created!" << std::endl;
+	//		break;
+	//	}
+	//	default:
+	//		break;
+	//	}
 	}
-	else
-		std::cout << "LABLE_COMPONENT_TYPE " << ct << " already exists in the container" << std::endl;
+	//else
+	//	std::cout << "LABLE_COMPONENT_TYPE " << ct << " already exists in the container" << std::endl;
 
 
 	//ComponentContainer.push_back(newComponent);
@@ -121,7 +165,7 @@ void Container::SortContainer()
 
 
 
-bool operator<(const COMPONENT_PTR & c1, const COMPONENT_PTR & c2)
+bool operator<(const Component & c1, const Component & c2)
 {
-	return c1->GetPriorityType() < c2->GetPriorityType();
+	return c1.GetPriorityType() < c2.GetPriorityType();
 }

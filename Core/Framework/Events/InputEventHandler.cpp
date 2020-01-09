@@ -11,8 +11,7 @@ void InputEventHandler::Update( )
 			case SDL_QUIT :
 				AddQuitEvent();
 				break;
-			case SDL_KEYDOWN : 
-				break;
+			case SDL_KEYDOWN :
 			case SDL_KEYUP :
 				HandleKeyBoard( event );
 				break;
@@ -36,7 +35,7 @@ void InputEventHandler::AddQuitEvent()
 void InputEventHandler::HandleKeyBoard( const SDL_Event &event )
 {
 	ButtonState state = ConvertButtonStateFromSDL( event.type, EventType::Keyboard );
-
+	auto temp = keyCode[event.key.keysym.sym];
 	if ( state != keyCode[ event.key.keysym.sym ] )
 	{
 		// Save new state of the button

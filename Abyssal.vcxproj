@@ -23,6 +23,7 @@
     <ClCompile Include="Core\Framework\Events\IEvent.cpp" />
     <ClCompile Include="Core\Framework\Events\SimpleEvent.cpp" />
     <ClCompile Include="Core\Framework\IO\FileSystemHelper.cpp" />
+    <ClCompile Include="Core\Framework\IO\inputEventActions.cpp" />
     <ClCompile Include="Core\Framework\Render\Model.cpp" />
     <ClCompile Include="Core\Framework\Render\Renderer3D.cpp" />
     <ClCompile Include="Core\Framework\Threading\ThreadScheduler.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="Core\Framework\Events\IEvent.h" />
     <ClInclude Include="Core\Framework\Events\SimpleEvent.h" />
     <ClInclude Include="Core\Framework\IO\FileSystemHelper.h" />
+    <ClInclude Include="Core\Framework\IO\inputEventActions.h" />
     <ClInclude Include="Core\Framework\Render\Model.h" />
     <ClInclude Include="Core\Framework\Render\Renderer3D.h" />
     <ClInclude Include="Core\Framework\Render\Shader\Shader.h" />

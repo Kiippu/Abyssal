@@ -1,5 +1,6 @@
 #include "Component.h"
 #include "Core/Node/componentLabelConverter.h"
+#include "Core/Node/Node.h"
 #include <iostream>
 
 ID_COMPONENT_TYPE Component::nextIdForComponent = 0;
@@ -28,4 +29,19 @@ std::string const Component::GetComponentTypeString() const
 LABEL_PRIORITY_TYPE const Component::GetPriorityType() const
 {
 	return prty_type;
+}
+
+unsigned const Component::GetID() const
+{
+	return comp_ID;
+}
+
+Node * Component::GetParent() const
+{
+	return m_parentNode;
+}
+
+void Component::SetParent(Node * node)
+{
+	m_parentNode = node;
 }

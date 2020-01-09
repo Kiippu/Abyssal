@@ -9,7 +9,7 @@ Node::Node(LABEL_NODE_TYPE lnt)
 	:node_ID(nextIdForNode++),node_type(lnt)
 {
 	std::cout << " Node was created" << std::endl;
-	comp_container = std::make_shared<Container>();
+	comp_container = std::make_shared<Container>(this);
 }
 
 

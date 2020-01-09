@@ -3,6 +3,8 @@
 #define CONTAINER_H
 
 #include <list>
+#include <map>
+#include <functional>
 #include "Core/Node/Component/Component.h"
 #include "Core/Node/Component/ComponentTypes.h"
 #include "Core/Node/Containers/PriorityType.h"
@@ -17,14 +19,13 @@
 		Container class which holds components for nodes
 
 *********************************************************************/
-
 // change this to a map
 using CONTAINER_LIST = std::vector<COMPONENT_PTR>;
 
 class Container
 {
 public:
-	Container();
+	Container(Node*);
 	~Container();
 	// finds out if a component exists in the container
 	bool hasComponent(LABEL_COMPONENT_TYPE ct);
@@ -50,12 +51,17 @@ public:
 private:
 	// list of components belonging to parent
 	CONTAINER_LIST		ComponentContainer;
+	// parent node from entity
+	Node * m_parentNode;
+	// private implementation data
+	struct PImpl;
+	std::unique_ptr<PImpl> m_impl;
 };
 
 using CONTAINER_PTR = std::shared_ptr<Container>;
 
 // overrides < operator
-bool operator<(const COMPONENT_PTR & c1, const COMPONENT_PTR & c2);
+bool operator<(const Component & c1, const Component & c2);
 
 #endif
 

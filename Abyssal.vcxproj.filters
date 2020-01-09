@@ -165,6 +165,9 @@
     <ClCompile Include="Core\Node\Component\Derivative\IO\inputHandler.cpp">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Framework\IO\inputEventActions.cpp">
+      <Filter>Core\Famwork\IO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\Math.h">
@@ -271,6 +274,9 @@
     </ClInclude>
     <ClInclude Include="Core\Node\Component\Derivative\IO\inputHandler.h">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\IO\inputEventActions.h">
+      <Filter>Core\Famwork\IO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

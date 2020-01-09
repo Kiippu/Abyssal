@@ -20,7 +20,8 @@ typedef enum : unsigned int
 	COMP_READ_WRITE,				//CREATED - NOT FINISHED
 	COMP_RENDER,					//CREATED - NOT FINISHED
 	COMP_MODEL3D,
-	COMP_NODE_CONTAINER				//NEW IDEA - Component that has a container that holds nodes (item bags, inventory)
+	COMP_NODE_CONTAINER,				//NEW IDEA - Component that has a container that holds nodes (item bags, inventory)
+	COMP_ERROR = UINT_MAX
 
 } LABEL_COMPONENT_TYPE;
 

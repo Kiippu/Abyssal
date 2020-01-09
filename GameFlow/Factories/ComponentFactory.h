@@ -3,11 +3,12 @@
 #define COMPONENT_FACTOR_H
 
 #include "IFactory.h"
-
+#include "Core/Node/Component/ComponentTypes.h"
 
 class Component;
+class componentLabelConverter;
 
-using namespace std::experimental::filesystem;
+//using namespace std::experimental::filesystem;
 
 
 class ComponentFactory : public IFactory
@@ -22,16 +23,23 @@ private:
 	// private constructor to impl singleton
 	ComponentFactory();
 
-
-
 public:
 	// Safety to delete any copies or new instances
 	ComponentFactory(const ComponentFactory&) = delete;
 	void operator=(ComponentFactory const&) = delete;
 
-	virtual bool ImportComponent(Component &);
+	virtual bool BuildComponents();
 
-	virtual unsigned create(std::string) { return 0; };
+	virtual unsigned create(std::string);
+
+	std::pair< LABEL_COMPONENT_TYPE, Component* > getComponetPair(unsigned);
+
+private:
+	// story copyable components
+	std::map<LABEL_COMPONENT_TYPE,Component*> m_componentList;
+	// list of components
+	std::map<unsigned,std::pair< LABEL_COMPONENT_TYPE, Component* >> m_activeComponents;
+	componentLabelConverter *m_labelConverter;
 };
 
 

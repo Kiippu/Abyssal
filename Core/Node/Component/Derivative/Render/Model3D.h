@@ -20,7 +20,6 @@
 
 //using MODEL_PTR = std::shared_ptr<Model>;
 
-
 class Model3D : public ComponentUpdatable
 {
 public:
@@ -34,6 +33,8 @@ public:
 private:
 
 	Model m_model;
+	struct PImpl;
+	std::unique_ptr<PImpl> m_impl;  ///< private implementation data
 
 };
 

@@ -8,6 +8,7 @@
 
 #include "GameFlow/GameManager.h"
 #include "GameFlow/Factories/EntityFactory.h"
+#include "GameFlow/Factories/ComponentFactory.h"
 #include "GameFlow/GameObjects/GameObjects.h"
 #include "Core/Node/Derivative/Shape/Cube.h"
 
@@ -62,6 +63,7 @@ T & Descriptor<T>::getDescriptor()
 
 int main(int argc, char *argv[])
 {
+	ComponentFactory::getInstance();
 	EntityFactory::getInstance();
 	/// last runnig  code
 	/*std::function<bool()> glambda = [&]()

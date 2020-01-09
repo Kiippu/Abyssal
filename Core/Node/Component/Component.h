@@ -6,6 +6,7 @@
 #include "Core/Node/Component/ComponentTypes.h"
 #include "Core/Node/Containers/PriorityType.h"
 #include <string>
+#include <functional>
 
 /*******************************************************************
 
@@ -15,6 +16,7 @@
 *********************************************************************/
 
 class componentLabelConverter;
+class Node;
 
 class Component
 {
@@ -27,11 +29,12 @@ public:
 	LABEL_COMPONENT_TYPE const GetComponentType() const;
 	std::string const GetComponentTypeString() const;
 	LABEL_PRIORITY_TYPE const GetPriorityType() const;
+	unsigned const GetID() const;
+	Node * GetParent() const;
+	void SetParent(Node*);
 
 	//holds next the incrememnted id tag
 	static ID_COMPONENT_TYPE	nextIdForComponent;
-
-	//virtual void Update() = 0;
 
 private:
 	// components name
@@ -40,9 +43,10 @@ private:
 	LABEL_PRIORITY_TYPE			prty_type;
 	std::string					m_type;
 	componentLabelConverter		*m_labelConverter;
+	Node						*m_parentNode;
 };
 
-using COMPONENT_PTR = std::shared_ptr<Component>;
+using COMPONENT_PTR = Component*;
 
 
 

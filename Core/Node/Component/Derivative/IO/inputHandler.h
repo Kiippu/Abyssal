@@ -11,6 +11,8 @@
 #include "Core/Framework/Events/InputEventHandler.h"
 #include "Core/node/Component/Derivative/ComponentUpdatable.h"
 
+class inputEventActions;
+
 typedef enum : unsigned int {
 	INPUT_ALL,
 	INPUT_MENU,
@@ -26,8 +28,12 @@ typedef enum : unsigned int {
 using FunctionVec = std::vector<std::function<void()>>;
 struct FuncObj {
 	// TODO: change actionName to EUM when ready!
+	FuncObj(std::string name = "None", std::function<bool()> fun = std::function<bool()>()) {
+		action = name;
+		func = fun;
+	};
 	std::string action = "None";
-	std::function<void()> func;
+	std::function<bool()> func;
 };
 
 struct keyObj {
@@ -89,7 +95,7 @@ private:*/
 
 	//void get(unsigned&);
 
-	//bool trigger(SDL_Keycode&, SDL_Keycode);
+	bool trigger(std::string &);
 
 private:
 
@@ -98,6 +104,8 @@ private:
 	StateMap m_inputFunctions;
 	e_INPUT_STATE m_currentState;
 	InputEventHandler * m_inputEvents;
+	std::shared_ptr<inputEventActions> m_inputEventActions;
+
 };
 
 #endif
