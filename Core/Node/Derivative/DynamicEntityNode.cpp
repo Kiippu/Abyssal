@@ -38,10 +38,10 @@ bool DynamicEntityNode::Update()
 			inputComponent.Update();
 		}
 
-		/*if (m_eventHandler->IsKeyDown(SDLK_r))
+		if (m_eventHandler->IsKeyDown(SDLK_r))
 		{
 			model.ResetMatrix();
-		}*/
+		}
 		else
 		{
 			if (m_eventHandler->IsKeyDown(SDLK_LCTRL))
