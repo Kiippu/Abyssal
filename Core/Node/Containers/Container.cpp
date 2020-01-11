@@ -98,7 +98,7 @@ void Container::AddComponent(LABEL_COMPONENT_TYPE ct)
 
 		// imple function componet creation here
 		auto label = m_impl->m_labelConverter->getLabel(ct);
-		unsigned id = m_impl->m_componentFactory->create(label);
+		unsigned id = m_impl->m_componentFactory->create(label, m_parentNode);
 
 		auto componentPair = m_impl->m_componentFactory->getComponetPair(id);
 		componentPair.second->SetParent(m_parentNode);

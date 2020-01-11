@@ -21,12 +21,17 @@ bool ComponentFactory::BuildComponents()
 	return true;
 }
 
-unsigned ComponentFactory::create(std::string name) 
+unsigned ComponentFactory::create(std::string name, Node* node) 
 {
 	auto label = m_labelConverter->getLebel(name);
 	auto itr = m_componentList.find(label);
 	if (itr != m_componentList.end()) {
 		auto component = itr->second;
+		if (component->GetComponentType() == LABEL_COMPONENT_TYPE::COMP_INPUT) {
+			inputHandler & inputComponent = dynamic_cast<inputHandler&>(*component);
+			inputComponent.SetParent(node);
+			inputComponent.init();
+		}
 		m_activeComponents.insert(std::make_pair(component->GetID(), std::make_pair(label ,component)));
 		return component->GetID();
 	}

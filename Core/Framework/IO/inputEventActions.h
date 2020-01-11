@@ -55,9 +55,9 @@ public:
 
 	void Initialise() 
 	{
-		//m_actions.push_back(std::make_shared<cameraReset>(m_dynamicEntity, "cameraReset"));
-		//auto & name = m_actions[m_actions.size()]->m_actionName;
-		//std::weak_ptr<ActionBase> action = m_actions[m_actions.size()];
+		m_actions.push_back(std::make_shared<cameraReset>(m_dynamicEntity, "cameraReset"));
+		auto & name = m_actions[m_actions.size()-1]->m_actionName;
+		std::weak_ptr<ActionBase> action = m_actions[m_actions.size()-1];
 		//m_actionsMaping.insert(std::make_pair(name, action));
 
 		//auto fundc = [&reset](bool) {reset.init(); return true; };
@@ -66,7 +66,7 @@ public:
 
 	};
 
-	//std::vector<std::shared_ptr<ActionBase>>		m_actions;
+	std::vector<std::shared_ptr<ActionBase>>		m_actions;
 	//std::map<std::string&, std::weak_ptr<ActionBase> >		m_actionsMaping;
 
 	Node * m_dynamicEntity;

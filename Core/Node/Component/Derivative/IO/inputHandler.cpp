@@ -12,6 +12,7 @@ inputHandler::inputHandler()
 	std::cout << "constructor - " << GetComponentTypeString() << std::endl;
 	m_currentState = e_INPUT_STATE::INPUT_ALL;
 	m_inputEvents = &InputEventHandler::getInstance();
+	
 	/*std::function<bool()> func = []() {
 		std::cout << "Function run!!" << std::endl;
 		return true;
@@ -23,7 +24,7 @@ inputHandler::inputHandler()
 
 	add(e_INPUT_STATE::INPUT_ALL, tempFunc, SDLK_w, e_CONDITIONAL_AND_OR::NEITHER, 0);*/
 
-	
+	//auto parent = GetParent();
 	//m_inputEventActions = std::make_shared<inputEventActions>(GetParent());
 	//m_inputEventActions->Initialise();
 	//auto & actionsList = m_inputEventActions->m_actions;
@@ -112,6 +113,21 @@ bool inputHandler::trigger(std::string & action)
 	//	}
 	//}
 	return false;
+}
+
+void inputHandler::init()
+{
+	auto parent = GetParent();
+	m_inputEventActions = std::make_shared<inputEventActions>(GetParent());
+	m_inputEventActions->Initialise();
+	auto & actionsList = m_inputEventActions->m_actions;
+	for (size_t i = 0; i < actionsList.size(); i++)
+	{
+		auto & action = actionsList[i];
+		//auto fundc = [&](bool) {action.init(); return true; };
+		std::function<bool()> func = [&]() {action->init(); return true; };
+		add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_r, e_CONDITIONAL_AND_OR::NEITHER, 0);
+	}
 }
 
 bool inputHandler::checkModKey()

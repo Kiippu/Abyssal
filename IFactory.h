@@ -33,7 +33,7 @@ private:
 
 public:
 
-	virtual unsigned create(std::string) = 0;
+	//virtual unsigned create(std::string) = 0;
 
 	virtual void setMasterPath(path filePath) { m_path = filePath; };
 	virtual const path& getMasterPath() { return m_path; };

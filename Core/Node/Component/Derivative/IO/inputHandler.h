@@ -97,6 +97,8 @@ private:*/
 
 	bool trigger(std::string &);
 
+	void init();
+
 private:
 
 	bool checkModKey();

@@ -7,6 +7,7 @@
 
 class Component;
 class componentLabelConverter;
+class Node;
 
 //using namespace std::experimental::filesystem;
 
@@ -30,7 +31,7 @@ public:
 
 	virtual bool BuildComponents();
 
-	virtual unsigned create(std::string);
+	virtual unsigned create(std::string, Node*);
 
 	std::pair< LABEL_COMPONENT_TYPE, Component* > getComponetPair(unsigned);
 

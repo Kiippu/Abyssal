@@ -14,7 +14,6 @@ DynamicEntityNode::DynamicEntityNode()
 	:Node(LABEL_NODE_TYPE::NODE_ENTITY)
 {
 	std::cout << "EntityNode was created" << std::endl;
-	
 }
 
 
@@ -38,12 +37,12 @@ bool DynamicEntityNode::Update()
 			inputComponent.Update();
 		}
 
-		if (m_eventHandler->IsKeyDown(SDLK_r))
+		/*if (m_eventHandler->IsKeyDown(SDLK_r))
 		{
 			model.ResetMatrix();
 		}
-		else
-		{
+		else*/
+		//{
 			if (m_eventHandler->IsKeyDown(SDLK_LCTRL))
 			{
 				glm::vec3 axis = Math::GetRotationAxis(*m_eventHandler);
@@ -61,7 +60,7 @@ bool DynamicEntityNode::Update()
 				glm::vec3 axis = Math::GetAxis(*m_eventHandler);
 				model.Translate(axis);
 			}
-		}
+		//}
 	}
 
 	return true;
