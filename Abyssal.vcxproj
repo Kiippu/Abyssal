@@ -24,6 +24,10 @@
     <ClCompile Include="Core\Framework\Events\SimpleEvent.cpp" />
     <ClCompile Include="Core\Framework\IO\FileSystemHelper.cpp" />
     <ClCompile Include="Core\Framework\IO\inputEventActions.cpp" />
+    <ClCompile Include="Core\Framework\Networking\Client.cpp" />
+    <ClCompile Include="Core\Framework\Networking\NetworkManager.cpp" />
+    <ClCompile Include="Core\Framework\Networking\Serialization.cpp" />
+    <ClCompile Include="Core\Framework\Networking\Server.cpp" />
     <ClCompile Include="Core\Framework\Render\Model.cpp" />
     <ClCompile Include="Core\Framework\Render\Renderer3D.cpp" />
     <ClCompile Include="Core\Framework\Threading\ThreadScheduler.cpp" />
@@ -53,6 +57,11 @@
     <ClInclude Include="Core\Framework\Events\SimpleEvent.h" />
     <ClInclude Include="Core\Framework\IO\FileSystemHelper.h" />
     <ClInclude Include="Core\Framework\IO\inputEventActions.h" />
+    <ClInclude Include="Core\Framework\Networking\Client.h" />
+    <ClInclude Include="Core\Framework\Networking\INet.h" />
+    <ClInclude Include="Core\Framework\Networking\NetworkManager.h" />
+    <ClInclude Include="Core\Framework\Networking\Serialization.h" />
+    <ClInclude Include="Core\Framework\Networking\Server.h" />
     <ClInclude Include="Core\Framework\Render\Model.h" />
     <ClInclude Include="Core\Framework\Render\Renderer3D.h" />
     <ClInclude Include="Core\Framework\Render\Shader\Shader.h" />

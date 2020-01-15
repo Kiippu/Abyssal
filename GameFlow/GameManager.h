@@ -12,7 +12,8 @@
 
 class Renderer3D;
 class MasterUpdate;
-class Model;
+class NetworkManager;
+
 
 class GameManager
 {
@@ -37,6 +38,8 @@ private:
 	MasterUpdate * m_masterUpdate;
 
 	Renderer3D * m_renderer;
+
+	NetworkManager * m_networkManager;
 
 public:
 	// Safety to delete any copies or new instances

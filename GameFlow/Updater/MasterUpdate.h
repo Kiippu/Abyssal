@@ -12,6 +12,7 @@
 class InputEventHandler;
 class DynamicEntityNode;
 class Cube;
+class NetworkManager;
 
 
 using DYNAMIC_ENTITY_PTR = std::shared_ptr<DynamicEntityNode>;
@@ -35,6 +36,8 @@ private:
 	//std::vector<DYNAMIC_ENTITY_PTR> m_EnityList;
 
 	GameObjects * m_gameObjects;
+
+	NetworkManager * m_networkManager;
 
 	std::shared_ptr<Cube> cube;
 

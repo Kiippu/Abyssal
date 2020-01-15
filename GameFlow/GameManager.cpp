@@ -2,7 +2,10 @@
 
 #include "GameFlow\Updater\MasterUpdate.h"
 #include "Core/Framework/Render/Renderer3D.h"
+#include "Core/Framework/Networking/NetworkManager.h"
 #include "Core/Framework/Render/Model.h"
+#include "GameFlow/Factories/EntityFactory.h"
+#include "GameFlow/Factories/ComponentFactory.h"
 
 #include <memory>
 
@@ -10,6 +13,7 @@ GameManager::GameManager()
 {
 	m_masterUpdate = &MasterUpdate::getInstance();
 	m_renderer = &Renderer3D::getInstance();
+	m_networkManager = &NetworkManager::getInstance();
 	//m_model = std::make_unique<Model>();
 }
 
@@ -38,7 +42,8 @@ void GameManager::RunGameLoop()
 
 void GameManager::Factories()
 {
-	/// TODO: create factories here !!!!!
+	ComponentFactory::getInstance();
+	EntityFactory::getInstance();
 }
 
 void GameManager::initGameEngine()

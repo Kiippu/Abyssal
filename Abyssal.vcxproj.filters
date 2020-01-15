@@ -85,6 +85,9 @@
     <Filter Include="Core\Famwork\Threading">
       <UniqueIdentifier>{95075b5d-6df1-4cdc-9452-762f72a0e482}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Famwork\Networking">
+      <UniqueIdentifier>{a80eddce-545c-4b9e-ad20-4fa891a3a1ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Node\Node.cpp">
@@ -167,6 +170,18 @@
     </ClCompile>
     <ClCompile Include="Core\Framework\IO\inputEventActions.cpp">
       <Filter>Core\Famwork\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Networking\Serialization.cpp">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Networking\NetworkManager.cpp">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Networking\Server.cpp">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Framework\Networking\Client.cpp">
+      <Filter>Core\Famwork\Networking</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +292,21 @@
     </ClInclude>
     <ClInclude Include="Core\Framework\IO\inputEventActions.h">
       <Filter>Core\Famwork\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\Serialization.h">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\NetworkManager.h">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\INet.h">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\Server.h">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\Client.h">
+      <Filter>Core\Famwork\Networking</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

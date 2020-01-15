@@ -7,6 +7,7 @@
 #include "Core/Framework/Render/Model.h"
 #include "Core/MathHelpers/Math/Math.h"
 #include "Core/Node/Derivative/Shape/Cube.h"
+#include "Core/Framework/Networking/NetworkManager.h"
 
 #include "Core/Node/Derivative/Shape/Cube.h"
 
@@ -16,6 +17,7 @@ MasterUpdate::MasterUpdate()
 {
 	m_gameObjects = &GameObjects::getInstance();
 	m_eventHandler = &InputEventHandler::getInstance();
+	m_networkManager = &NetworkManager::getInstance();
 	//model = std::make_shared<Model>();
 
 	/*cube = std::make_shared<Cube>();
@@ -38,13 +40,16 @@ void MasterUpdate::Update()
 	while (!m_eventHandler->WasQuit())
 	{
 
-
 		auto & dynamicObjects = m_gameObjects->getAllDynamicObjects();
 		// Update our event handler
-		m_eventHandler->Update();
+		/// TODO: make isHost work!!
+		if (m_networkManager->isHost() || true)
+			m_eventHandler->Update();
+		else
+			m_networkManager->Update();
 
 		
-		
+		// Render scene
 		for (auto & obj : dynamicObjects)
 		{
 			//m_EnityList[i]->Update();
@@ -59,6 +64,7 @@ void MasterUpdate::Update()
 			}
 		}
 
+		// update dynamic objects
 		for (auto & obj : dynamicObjects)
 		{
 			obj->Update();
