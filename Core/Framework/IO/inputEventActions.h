@@ -6,6 +6,8 @@
 #include "Core/Node/Component/Derivative/IO/inputHandler.h"
 #include "Core/Node/Derivative/DynamicEntityNode.h"
 #include "Core/Node/Component/Derivative/Render/Model3D.h"
+// network
+#include "Core/Framework/Networking/Server.h"
 
 
 class ActionBase
@@ -45,6 +47,22 @@ public:
 };
 
 
+class InitServer : public ActionBase
+{
+public:
+
+	InitServer(Node* ent, std::string name)
+		: ActionBase(ent, name) {};
+
+	virtual bool init()
+	{
+		Server server;
+		server.Init();
+		return true;
+	}
+};
+
+
 class inputEventActions
 {
 public:
@@ -56,8 +74,14 @@ public:
 	void Initialise() 
 	{
 		m_actions.push_back(std::make_shared<cameraReset>(m_dynamicEntity, "cameraReset"));
-		auto & name = m_actions[m_actions.size()-1]->m_actionName;
-		std::weak_ptr<ActionBase> action = m_actions[m_actions.size()-1];
+		//auto & name = m_actions[m_actions.size()-1]->m_actionName;
+		//std::weak_ptr<ActionBase> action = m_actions[m_actions.size()-1];
+
+
+		m_actions.push_back(std::make_shared<InitServer>(m_dynamicEntity, "initServer"));
+		//auto & name = m_actions[m_actions.size() - 1]->m_actionName;
+		//std::weak_ptr<ActionBase> action = m_actions[m_actions.size() - 1];
+
 		//m_actionsMaping.insert(std::make_pair(name, action));
 
 		//auto fundc = [&reset](bool) {reset.init(); return true; };

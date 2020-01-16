@@ -124,9 +124,15 @@ void inputHandler::init()
 	for (size_t i = 0; i < actionsList.size(); i++)
 	{
 		auto & action = actionsList[i];
-		//auto fundc = [&](bool) {action.init(); return true; };
 		std::function<bool()> func = [&]() {action->init(); return true; };
-		add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_r, e_CONDITIONAL_AND_OR::NEITHER, 0);
+		//auto fundc = [&](bool) {action.init(); return true; };
+		if (action->m_actionName == "cameraReset") {
+			add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_r, e_CONDITIONAL_AND_OR::NEITHER, 0);
+		}
+		else if (action->m_actionName == "initServer") {
+			add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_p, e_CONDITIONAL_AND_OR::NEITHER, 0);
+		}
+		
 	}
 }
 
