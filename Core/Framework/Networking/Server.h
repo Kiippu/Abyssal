@@ -29,9 +29,9 @@ public:
 
 	virtual void Init();
 
-	virtual void Serialize();
+	virtual void Serialize(eNetMessage);
 
-	virtual void Deserialize();
+	virtual void Deserialize(eNetMessage);
 
 private:
 	/// private implementation for members

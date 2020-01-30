@@ -3,11 +3,8 @@
 #pragma once
 
 #include <memory>
-
-enum class eNetType : unsigned {
-	server,
-	client
-};
+#include "Core/Framework/Networking/NetworkTypes.h"
+#include "Core/Framework/Networking/NetworkTypes.h"
 
 class INet
 {
@@ -23,9 +20,9 @@ public:
 	/// add user to interface
 	virtual void AddUser() = 0;
 	/// For thread - serialize incomming data
-	virtual void Serialize() = 0;
+	virtual void Serialize(eNetMessage) = 0;
 	/// For Thread - deserialize data to be sent off to users/server
-	virtual void Deserialize() = 0;
+	virtual void Deserialize(eNetMessage) = 0;
 	/// get the Interface type
 	virtual eNetType& getNetType() { return m_type; };
 

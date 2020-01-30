@@ -83,10 +83,10 @@ void Server::Init()
 
 }
 
-void Server::Serialize()
+void Server::Serialize(eNetMessage)
 {
 }
 
-void Server::Deserialize()
+void Server::Deserialize(eNetMessage)
 {
 }

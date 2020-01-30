@@ -31,6 +31,14 @@ CONTAINER_PTR const Node::GetComponentContainer() const
 {
 	return comp_container;
 }
+transform const Node::GetTransfrom()
+{
+	return m_transform;
+}
+void Node::setWorldTransform( transform trans)
+{
+	m_transform = trans;
+}
 //
 //void Node::Update()
 //{

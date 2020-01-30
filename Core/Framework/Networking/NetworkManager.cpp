@@ -23,3 +23,14 @@ bool NetworkManager::isSolo()
 void NetworkManager::setLocalInterface()
 {
 }
+
+void NetworkManager::Serialize(eNetMessage msg)
+{
+	if (isClient())
+		m_localInterface->Serialize(msg);
+}
+
+const INet & NetworkManager::getlocalInterface() const
+{
+	return *m_localInterface.get();
+}

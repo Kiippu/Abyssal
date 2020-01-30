@@ -10,7 +10,9 @@
 
 #include "Core/Framework/Events/InputEventHandler.h"
 #include "Core/node/Component/Derivative/ComponentUpdatable.h"
+#include "Core/Framework/Networking/NetworkTypes.h"
 
+class networkManager;
 class inputEventActions;
 
 typedef enum : unsigned int {
@@ -41,12 +43,14 @@ struct keyObj {
 	SDL_Keycode modifier = SDLK_UNKNOWN;
 	e_CONDITIONAL_AND_OR conditional = NEITHER;
 	FuncObj func = FuncObj();
+	eNetMessage netMessage;
 
-	keyObj(SDL_Keycode key0, SDL_Keycode key1, e_CONDITIONAL_AND_OR con, FuncObj fc) {
+	keyObj(SDL_Keycode key0, SDL_Keycode key1, e_CONDITIONAL_AND_OR con, FuncObj fc, eNetMessage msg) {
 		primary = key0;
 		modifier = key1;
 		conditional = con;
 		func = fc;
+		netMessage = msg;
 	}
 
 	bool operator == (const keyObj &rhs) const
@@ -55,7 +59,8 @@ struct keyObj {
 			this->primary == rhs.primary && 
 			this->modifier == rhs.modifier && 
 			func.action == rhs.func.action &&
-			rhs.conditional == this->conditional);
+			rhs.conditional == this->conditional &&
+			rhs.netMessage == this->netMessage);
 	}
 };
 
@@ -87,7 +92,7 @@ private:*/
 	inputHandler(const inputHandler&) = delete;
 	void operator=(inputHandler const&) = delete;
 
-	void add(e_INPUT_STATE state, FuncObj func, SDL_Keycode primaryKey, e_CONDITIONAL_AND_OR con, SDL_Keycode ModifierKey);
+	void add(e_INPUT_STATE state, FuncObj func, SDL_Keycode primaryKey, e_CONDITIONAL_AND_OR con, SDL_Keycode ModifierKey, eNetMessage netMsg);
 	
 	bool setState(e_INPUT_STATE);
 
@@ -107,6 +112,8 @@ private:
 	e_INPUT_STATE m_currentState;
 	InputEventHandler * m_inputEvents;
 	std::shared_ptr<inputEventActions> m_inputEventActions;
+
+	NetworkManager * m_networkManager;
 
 };
 

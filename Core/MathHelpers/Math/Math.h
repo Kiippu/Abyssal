@@ -11,16 +11,16 @@ class Math
 			glm::vec3 axis(0.0f);
 
 			if (handler.IsKeyDown(SDLK_UP))
-				axis.y = -0.1f;
-
-			if (handler.IsKeyDown(SDLK_DOWN))
 				axis.y = 0.1f;
 
+			if (handler.IsKeyDown(SDLK_DOWN))
+				axis.y = -0.1f;
+
 			if (handler.IsKeyDown(SDLK_LEFT))
-				axis.x = -0.1f;
+				//axis.x = -0.1f;
 
 			if (handler.IsKeyDown(SDLK_RIGHT))
-				axis.x = 0.1f;
+				//axis.x = 0.1f;
 
 			if (handler.IsKeyDown(SDLK_w))
 				axis.z = -0.1f;

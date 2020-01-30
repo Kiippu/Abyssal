@@ -15,12 +15,16 @@
 
 typedef enum : unsigned int
 {
-	COMP_INPUT = 0,					//NOT DONE
+	COMP_INPUT = 0,					// DONE
 	COMP_ANIMATED_SPRITE,			//CREATED - NOT FINISHED
 	COMP_READ_WRITE,				//CREATED - NOT FINISHED
 	COMP_RENDER,					//CREATED - NOT FINISHED
 	COMP_MODEL3D,
 	COMP_NODE_CONTAINER,				//NEW IDEA - Component that has a container that holds nodes (item bags, inventory)
+	COMP_CAMERA,
+
+
+
 	COMP_ERROR = UINT_MAX
 
 } LABEL_COMPONENT_TYPE;

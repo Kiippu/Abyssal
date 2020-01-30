@@ -34,6 +34,7 @@
     <ClCompile Include="Core\Framework\Threading\ThreadSpool.cpp" />
     <ClCompile Include="Core\Node\componentLabelConverter.cpp" />
     <ClCompile Include="Core\Node\Component\Component.cpp" />
+    <ClCompile Include="Core\Node\Component\Derivative\Camera\Camera.cpp" />
     <ClCompile Include="Core\Node\Component\Derivative\ComponentUpdatable.cpp" />
     <ClCompile Include="Core\Node\Component\Derivative\IO\inputHandler.cpp" />
     <ClCompile Include="Core\Node\Component\Derivative\IO\ReadWrite.cpp" />
@@ -60,6 +61,7 @@
     <ClInclude Include="Core\Framework\Networking\Client.h" />
     <ClInclude Include="Core\Framework\Networking\INet.h" />
     <ClInclude Include="Core\Framework\Networking\NetworkManager.h" />
+    <ClInclude Include="Core\Framework\Networking\NetworkTypes.h" />
     <ClInclude Include="Core\Framework\Networking\Serialization.h" />
     <ClInclude Include="Core\Framework\Networking\Server.h" />
     <ClInclude Include="Core\Framework\Render\Model.h" />
@@ -73,6 +75,7 @@
     <ClInclude Include="Core\Node\Component\Component.h" />
     <ClInclude Include="Core\Node\Component\ComponentHeaders.h" />
     <ClInclude Include="Core\Node\Component\ComponentTypes.h" />
+    <ClInclude Include="Core\Node\Component\Derivative\Camera\Camera.h" />
     <ClInclude Include="Core\Node\Component\Derivative\ComponentUpdatable.h" />
     <ClInclude Include="Core\Node\Component\Derivative\IO\inputHandler.h" />
     <ClInclude Include="Core\Node\Component\Derivative\IO\ReadWrite.h" />
@@ -162,7 +165,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_ttf\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_net\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_image\include;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\game projects\Engine\SDL_2\packages\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\Debug;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_ttf\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_net\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_image\include;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\game projects\Engine\SDL_2\packages\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_ttf\lib\x86;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_net\lib\x86;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2_image\lib\x86;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\Win32;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

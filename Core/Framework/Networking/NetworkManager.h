@@ -3,6 +3,8 @@
 #pragma once
 
 #include "Core/Framework/Networking/INet.h"
+#include "Core/Framework/Networking/NetworkTypes.h"
+
 
 class NetworkManager
 {
@@ -30,6 +32,10 @@ public:
 	bool isSolo();
 
 	void setLocalInterface();
+
+	void Serialize(eNetMessage msg);
+
+	const INet& getlocalInterface() const;
 
 	/// getNetworkInterface() - client or server class
 

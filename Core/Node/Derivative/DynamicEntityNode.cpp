@@ -1,5 +1,7 @@
 #include "DynamicEntityNode.h"
 
+#include "Core/Node/Component/Derivative/ComponentUpdatable.h"
+
 #include "Core/Framework/Events/InputEventHandler.h"
 #include "Core/Node/Component/Derivative/Render/Model3D.h"
 #include "Core/Node/Component/Derivative/IO/inputHandler.h"
@@ -23,6 +25,15 @@ DynamicEntityNode::~DynamicEntityNode()
 
 bool DynamicEntityNode::Update()
 {
+	// get list of updatable comps and run their updates
+	auto list = GetComponentContainer();
+	for (auto* comp : list->GetContainerList())
+	{
+		//ComponentUpdatable
+		auto& updatable = dynamic_cast<ComponentUpdatable&>(*comp);
+		updatable.Update();
+	}
+
 	auto component = GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
 	if (component != nullptr)
 	{
@@ -31,11 +42,13 @@ bool DynamicEntityNode::Update()
 		auto & model = modelComponent.getModel();
 
 		//update input component;
-		auto inputComponentPtr = GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_INPUT);
+		/*auto inputComponentPtr = GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_INPUT);
 		if (inputComponentPtr != nullptr) {
 			inputHandler & inputComponent = dynamic_cast<inputHandler&>(*inputComponentPtr);
 			inputComponent.Update();
-		}
+		}*/
+		
+		
 
 		/*if (m_eventHandler->IsKeyDown(SDLK_r))
 		{
@@ -57,8 +70,8 @@ bool DynamicEntityNode::Update()
 			}
 			else
 			{
-				glm::vec3 axis = Math::GetAxis(*m_eventHandler);
-				model.Translate(axis);
+				//glm::vec3 axis = Math::GetAxis(*m_eventHandler);
+				//model.Translate(axis);
 			}
 		//}
 	}

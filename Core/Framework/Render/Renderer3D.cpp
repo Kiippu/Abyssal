@@ -28,6 +28,9 @@ std::string programName = "Abyssal Engine";
 #include <glm/glm.hpp>
 #include <SDL.h>
 
+#define HEIGHT 900;
+#define WIDTH 1600;
+
 Renderer3D::Renderer3D()
 {
 	m_gameObjects = &GameObjects::getInstance();
@@ -86,7 +89,7 @@ bool Renderer3D::Init()
 
 	// Create our window centered at 512x512 resolution
 	mainWindow = SDL_CreateWindow(programName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		512, 512, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+		1600, 900, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 
 	// Check that everything worked out okay
 	if (!mainWindow)
@@ -123,6 +126,8 @@ bool Renderer3D::RenderSetup()
 	if (!Init())
 		return false;
 
+	getCameraObj();
+
 	std::cout << "Controls :"
 		<< "\n\tMove left : \t\t\t Left"
 		<< "\n\tMove right : \t\t\t Right"
@@ -132,26 +137,25 @@ bool Renderer3D::RenderSetup()
 		<< "\n\tMove counter-clockwise : \t s"
 		<< std::endl;
 
-	SetUpShader("Core/framework/Render/Shader/Vertex/vert.glsl", "Core/framework/Render/Shader/Fragment/frag.glsl");
+	SetUpShader("Data/Shader/Vertex/vert.glsl", "Data/Shader/Fragment/frag.glsl");
 
 	auto dynamicObjects = m_gameObjects->getAllDynamicObjects();
 	for (auto & obj : dynamicObjects)
 	{
-		auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
-		Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
+		if (obj->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D))
+		{
+			auto modelComponent = obj->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_MODEL3D);
+			Model3D & model3D = dynamic_cast<Model3D&>(*modelComponent);
 
-		auto & model = model3D.getModel();
-		/// TODO: replace with array pf objects etc
-		if (!model.SetupBufferObjects())
-			return false;
+			auto & model = model3D.getModel();
+			/// TODO: replace with array pf objects etc
+			if (!model.SetupBufferObjects())
+				return false;
 
-		// Set the shader 
-		SetShader(model);
+			// Set the shader 
+			SetShader(model);
+		}
 	}
-
-
-
-
 	return true;
 }
 
@@ -213,8 +217,14 @@ void Renderer3D::RenderEnd()
 
 void Renderer3D::SetMatrix(const glm::mat4 & model, Shader & shader)
 {
-	glm::mat4 mvp = projection * view  * model;
-	shader.SetMatrix(mvp);
+	if (auto cameraPtr = m_cameraNode.lock())
+	{
+		auto comp = cameraPtr->GetComponentContainer()->GetComponent(LABEL_COMPONENT_TYPE::COMP_CAMERA);
+		auto camera = &dynamic_cast<Camera&>(*comp);
+		auto viewProjection = camera->getViewPerspective();
+		glm::mat4 mvp = viewProjection * model;
+		shader.SetMatrix(mvp);
+	}
 }
 
 void Renderer3D::SetShader(Model & m)
@@ -289,4 +299,17 @@ bool Renderer3D::SetSDL_GL_Attributes()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	return true;
+}
+
+void Renderer3D::getCameraObj()
+{
+	auto dynamicObjects = m_gameObjects->getAllDynamicObjects();
+	for (auto & obj : dynamicObjects)
+	{
+		if (obj->GetComponentContainer()->hasComponent(LABEL_COMPONENT_TYPE::COMP_CAMERA))
+		{
+			m_cameraNode = obj;
+			return;
+		}
+	}
 }

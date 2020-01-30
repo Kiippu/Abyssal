@@ -4,6 +4,7 @@
 #include "Core/node/Component/Derivative/IO/ReadWrite.h"
 #include "Core/node/Component/Derivative/Render/Model3D.h"
 #include "Core/node/Component/Derivative/IO/inputHandler.h"
+#include "Core/Node/Component/Derivative/Camera/Camera.h"
 #include "Core/Node/componentLabelConverter.h"
 
 
@@ -18,6 +19,7 @@ bool ComponentFactory::BuildComponents()
 	m_componentList.insert(std::make_pair(LABEL_COMPONENT_TYPE::COMP_MODEL3D, new Model3D));
 	m_componentList.insert(std::make_pair(LABEL_COMPONENT_TYPE::COMP_INPUT, new inputHandler));
 	m_componentList.insert(std::make_pair(LABEL_COMPONENT_TYPE::COMP_READ_WRITE, new ReadWrite));
+	m_componentList.insert(std::make_pair(LABEL_COMPONENT_TYPE::COMP_CAMERA, new Camera));
 	return true;
 }
 

@@ -80,8 +80,8 @@ void Model::CleanUp()
 // This is where we setup the model like we saw in the first part
 bool Model::SetupBufferObjects()
 {
-	m_positions = ReadFile("Data/positions.txt");
-	m_colors = ReadFile("Data/colors.txt");
+	m_positions = ReadFile("Debug/Data/positions.txt");
+	m_colors = ReadFile("Debug/Data/colors.txt");
 
 	// Generate and assign two Vertex Buffer Objects to our handle
 	glGenBuffers(2, vbo);

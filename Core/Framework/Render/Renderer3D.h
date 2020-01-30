@@ -8,8 +8,10 @@
 // C++ standard
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "Core/Framework/Render/Shader/Shader.h"
+#include "Core/Node/Component/Derivative/Camera/Camera.h"
 
 
 // OpenGL stuff
@@ -76,6 +78,8 @@ private:
 
 	bool SetSDL_GL_Attributes();
 
+	void getCameraObj();
+
 	// Our SDL_Window ( just like with SDL2 wihout OpenGL)
 	SDL_Window *mainWindow;
 
@@ -89,6 +93,9 @@ private:
 	glm::mat4 projection;
 	glm::mat4 view;
 
+	// all game objects
 	GameObjects * m_gameObjects;
+	// camera node
+	std::weak_ptr<DynamicEntityNode> m_cameraNode;
 
 };

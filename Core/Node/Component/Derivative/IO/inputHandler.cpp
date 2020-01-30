@@ -3,6 +3,7 @@
 #include "SDL_keycode.h"
 #include <functional>
 #include "Core/Framework/IO/inputEventActions.h"
+#include "Core/Framework/Networking/NetworkManager.h"
 
 
 
@@ -10,8 +11,9 @@ inputHandler::inputHandler()
 	:ComponentUpdatable(LABEL_COMPONENT_TYPE::COMP_INPUT, LABEL_PRIORITY_TYPE::PRTY_INPUT, "inputHandler")
 {
 	std::cout << "constructor - " << GetComponentTypeString() << std::endl;
-	m_currentState = e_INPUT_STATE::INPUT_ALL;
+	m_currentState = e_INPUT_STATE::INPUT_WORLD;
 	m_inputEvents = &InputEventHandler::getInstance();
+	m_networkManager = &NetworkManager::getInstance();
 	
 	/*std::function<bool()> func = []() {
 		std::cout << "Function run!!" << std::endl;
@@ -43,6 +45,12 @@ bool inputHandler::Update()
 	auto keyState = m_inputFunctions[m_currentState];
 	for (size_t i = 0; i < keyState.size(); i++)
 	{
+		// send input to network manger if client
+		if (m_networkManager->isClient()) {
+			m_networkManager->Serialize(keyState[i].netMessage);
+			continue;
+		}
+		// if host/solo run functions; 
 		switch (keyState[i].conditional)
 		{
 		case e_CONDITIONAL_AND_OR::NEITHER:{
@@ -66,11 +74,16 @@ bool inputHandler::Update()
 	return true;
 }
 
-void inputHandler::add(e_INPUT_STATE state, FuncObj func, SDL_Keycode primaryKey, e_CONDITIONAL_AND_OR con = NEITHER, SDL_Keycode modifierKey = SDLK_UNKNOWN)
+void inputHandler::add(e_INPUT_STATE state, 
+	FuncObj func, 
+	SDL_Keycode primaryKey, 
+	e_CONDITIONAL_AND_OR con = NEITHER, 
+	SDL_Keycode modifierKey = SDLK_UNKNOWN, 
+	eNetMessage netMsg = eNetMessage::UNKNOWN)
 {
 	auto& iterState = m_inputFunctions[state];
 
-	keyObj tempState = keyObj(primaryKey, modifierKey, con, func);
+	keyObj tempState = keyObj(primaryKey, modifierKey, con, func, netMsg);
 	
 	for (auto& obj : iterState) {
 		if (obj == tempState) {
@@ -125,14 +138,7 @@ void inputHandler::init()
 	{
 		auto & action = actionsList[i];
 		std::function<bool()> func = [&]() {action->init(); return true; };
-		//auto fundc = [&](bool) {action.init(); return true; };
-		if (action->m_actionName == "cameraReset") {
-			add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_r, e_CONDITIONAL_AND_OR::NEITHER, 0);
-		}
-		else if (action->m_actionName == "initServer") {
-			add(e_INPUT_STATE::INPUT_ALL, FuncObj(action->m_actionName, func), SDLK_p, e_CONDITIONAL_AND_OR::NEITHER, 0);
-		}
-		
+		add(action->m_intupState, FuncObj(action->m_actionName, func), action->m_primaryKey, action->m_conditional, action->m_modifyKey, action->m_netMessage);
 	}
 }
 

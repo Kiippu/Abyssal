@@ -88,6 +88,9 @@
     <Filter Include="Core\Famwork\Networking">
       <UniqueIdentifier>{a80eddce-545c-4b9e-ad20-4fa891a3a1ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Node\Component\Derivatives\Camera">
+      <UniqueIdentifier>{4d9d3053-7ade-44a9-b075-3625f370ec03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Node\Node.cpp">
@@ -182,6 +185,9 @@
     </ClCompile>
     <ClCompile Include="Core\Framework\Networking\Client.cpp">
       <Filter>Core\Famwork\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Node\Component\Derivative\Camera\Camera.cpp">
+      <Filter>Core\Node\Component\Derivatives\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +313,12 @@
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\Client.h">
       <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Networking\NetworkTypes.h">
+      <Filter>Core\Famwork\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Node\Component\Derivative\Camera\Camera.h">
+      <Filter>Core\Node\Component\Derivatives\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
