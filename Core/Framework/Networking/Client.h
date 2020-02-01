@@ -10,10 +10,6 @@ public:
 
 	Client();
 	~Client() {};
-
-	// Safety to delete any copies or new instances
-	Client(const Client&)	= delete;
-	void operator=(Client const&)		= delete;
 	
 	virtual void Update();
 

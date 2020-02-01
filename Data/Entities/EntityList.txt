@@ -2,5 +2,11 @@
 	"key":"cube_geometry"
 	"name":"Cube" 
 	"type":"dynamic"
-	"component":[ 3dModel, readWrite, inputHandler]
+	"component":[ 3dModel]
+}
+{
+	"key":"camera"
+	"name":"camera" 
+	"type":"dynamic"
+	"component":[camera, inputHandler]
 }

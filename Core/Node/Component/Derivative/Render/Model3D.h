@@ -13,9 +13,6 @@
 			Component - Access to 3d model 
 
 
-	TODO:
-	- expand  and add SDL2.0 features
-
 *********************************************************************/
 
 //using MODEL_PTR = std::shared_ptr<Model>;
@@ -26,7 +23,9 @@ public:
 	Model3D();
 	~Model3D();
 
-	bool Update();
+	virtual bool Update();
+	virtual void Serialize(char*);
+	virtual void Deserialize(char*);
 
 	Model & getModel();
 

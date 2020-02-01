@@ -73,20 +73,14 @@ using keyHandle = KeyVec::iterator;
 class inputHandler : public ComponentUpdatable
 {
 public:
-	// removed static to allow multiple input controllers.
-	/*static inputHandler & getInstance() {
-		static inputHandler instance;
-		return instance;
-	}
-
-private:*/
-	// private constructor to impl singleton
 	inputHandler();
 	~inputHandler() {};
 
-//public:
 	// inherited update for component
-	bool Update();
+	virtual bool Update();
+	/// networking inherited
+	virtual void Serialize(char* data);
+	virtual void Deserialize(char* data);
 
 	// Safety to delete any copies or new instances
 	inputHandler(const inputHandler&) = delete;

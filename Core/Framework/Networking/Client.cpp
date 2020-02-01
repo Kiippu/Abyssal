@@ -31,7 +31,6 @@ void Client::AddUser()
 
 void Client::Init()
 {
-
 	printf("\nInit Server begin\n");
 	// Port number
 	const unsigned short PORT_NUMBER = 54000;
@@ -49,7 +48,7 @@ void Client::Init()
 	// create hint structure for srever
 	sockaddr_in server;
 	server.sin_family = AF_INET;
-	server.sin_port = htons(54000);
+	server.sin_port = htons(9900);
 
 	inet_pton(AF_INET, "127.0.0.1", &server.sin_addr);
 
@@ -63,11 +62,13 @@ void Client::Init()
 	{
 		buf.clear();
 		std::cin >> buf;
-		int sendOk = sendto(out, buf.c_str(), buf.size() + 1, 0, (sockaddr*)&server, sizeof(server));
+		if (!buf.empty()) {
+			int sendOk = sendto(out, buf.c_str(), buf.size() + 1, 0, (sockaddr*)&server, sizeof(server));
 
-		if (sendOk == SOCKET_ERROR)
-		{
-			printf("Cant't bind socket!: %d!", WSAGetLastError());
+			if (sendOk == SOCKET_ERROR)
+			{
+				printf("Cant't bind socket!: %d!", WSAGetLastError());
+			}
 		}
 	}
 	

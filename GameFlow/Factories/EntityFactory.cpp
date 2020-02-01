@@ -8,8 +8,9 @@
 EntityFactory::EntityFactory()
 {
 	m_labelConverter = &componentLabelConverter::getInstance();
-	setMasterPath("Debug/Data/Entities/EntityList.txt");
+	setMasterPath("Data/Entities/EntityList.txt");
 	ImportEntities();
+
 	create("cube_geometry");
 	create("camera");
 

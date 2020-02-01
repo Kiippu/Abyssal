@@ -21,7 +21,7 @@ LABEL_COMPONENT_TYPE const Component::GetComponentType() const
 	return comp_type;
 }
 
-std::string const Component::GetComponentTypeString() const
+std::string const Component::GetComponentTypeString()
 {
 	return m_type;
 }

@@ -24,6 +24,16 @@ Model3D::~Model3D()
 {
 }
 
+void Model3D::Serialize(char * data)
+{
+	printf("Serializing %s", GetComponentTypeString().c_str());
+}
+
+void Model3D::Deserialize(char * data)
+{
+	printf("Deserializing %s", GetComponentTypeString().c_str());
+}
+
 bool Model3D::Update()
 {
 

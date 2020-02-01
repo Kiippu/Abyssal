@@ -43,7 +43,7 @@ void MasterUpdate::Update()
 		auto & dynamicObjects = m_gameObjects->getAllDynamicObjects();
 		// Update our event handler
 		/// TODO: make isHost work!!
-		if (m_networkManager->isHost() || true)
+		if (m_networkManager->isHost() || m_networkManager->isSolo() || m_networkManager->isClient())
 			m_eventHandler->Update();
 		else
 			m_networkManager->Update();

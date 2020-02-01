@@ -22,7 +22,7 @@ void Server::Init()
 {
 	printf("\nInit Server begin\n");
 	// Port number
-	const unsigned short PORT_NUMBER = 54000;
+	const unsigned short PORT_NUMBER = 9900;
 
 	// start winSock
 	WSADATA data;
@@ -68,7 +68,7 @@ void Server::Init()
 		ZeroMemory(&clientIP, 256);
 		// convert IP struct to string 
 		inet_ntop(AF_INET, &client.sin_addr, clientIP, 256);
-		printf("Message recv from %s : %s", clientIP, buf);
+		printf("\n Message recv from %s : %s", clientIP, buf);
 
 	}
 

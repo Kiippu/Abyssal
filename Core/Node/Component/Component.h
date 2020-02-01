@@ -27,7 +27,7 @@ public:
 	virtual ~Component();
 	// gets type name
 	LABEL_COMPONENT_TYPE const GetComponentType() const;
-	std::string const GetComponentTypeString() const;
+	std::string const GetComponentTypeString();
 	LABEL_PRIORITY_TYPE const GetPriorityType() const;
 	unsigned const GetID() const;
 	Node * GetParent() const;

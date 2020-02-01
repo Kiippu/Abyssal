@@ -31,18 +31,18 @@ public:
 
 	bool isSolo();
 
-	void setLocalInterface();
+	void setLocalInterface(std::unique_ptr<INet>);
 
 	void Serialize(eNetMessage msg);
 
-	const INet& getlocalInterface() const;
+	INet& getlocalInterface() const;
 
 	/// getNetworkInterface() - client or server class
 
 private:
 
 	/// abstrct class of network or client member
-	std::unique_ptr<INet> m_localInterface;
+	std::unique_ptr<INet> m_localInterface = nullptr;
 
 };
 

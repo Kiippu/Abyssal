@@ -14,7 +14,7 @@ void main(void)
 {
     if (randomColor)
     {
-        fragColor.r  = (ex_Color.r * 0.5) + ( rand(ex_Color.ra) * 0.5);
+        fragColor.r  = (ex_Color.r * 0.7) + ( rand(ex_Color.ra) * 0.5);
         fragColor.g  = (ex_Color.g * 0.5) + ( rand(ex_Color.bg) * 0.5);
         fragColor.b  = (ex_Color.b * 0.5) + ( rand(ex_Color.gb) * 0.5);
         fragColor.a  = ex_Color.a;// + ( rand(ex_Color.ba) * 0.8);

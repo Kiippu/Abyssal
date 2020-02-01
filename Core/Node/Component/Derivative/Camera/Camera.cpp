@@ -56,6 +56,16 @@ bool Camera::Update()
 	return true;
 }
 
+void Camera::Serialize(char * data)
+{
+	printf("Serializing %s", GetComponentTypeString().c_str());
+}
+
+void Camera::Deserialize(char * data)
+{
+	printf("Deserializing %s", GetComponentTypeString().c_str());
+}
+
 glm::mat4 Camera::getViewPerspective() const
 {
 	//auto view = glm::lookAt

@@ -3,7 +3,7 @@
 #include "SDL_keycode.h"
 #include <functional>
 #include "Core/Framework/IO/inputEventActions.h"
-#include "Core/Framework/Networking/NetworkManager.h"
+//#include "Core/Framework/Networking/NetworkManager.h"
 
 
 
@@ -45,11 +45,12 @@ bool inputHandler::Update()
 	auto keyState = m_inputFunctions[m_currentState];
 	for (size_t i = 0; i < keyState.size(); i++)
 	{
+		// TODO: uncomment to have serialization!
 		// send input to network manger if client
-		if (m_networkManager->isClient()) {
-			m_networkManager->Serialize(keyState[i].netMessage);
-			continue;
-		}
+		//if (m_networkManager->isClient()) {
+		//	m_networkManager->Serialize(keyState[i].netMessage);
+		//	continue;
+		//}
 		// if host/solo run functions; 
 		switch (keyState[i].conditional)
 		{
@@ -72,6 +73,16 @@ bool inputHandler::Update()
 	}
 
 	return true;
+}
+
+void inputHandler::Serialize(char * data)
+{
+	printf("Serializing %s" , GetComponentTypeString().c_str());
+}
+
+void inputHandler::Deserialize(char * data)
+{
+	printf("Deserializing %s", GetComponentTypeString().c_str());
 }
 
 void inputHandler::add(e_INPUT_STATE state, 

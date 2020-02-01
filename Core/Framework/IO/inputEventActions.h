@@ -8,9 +8,12 @@
 #include "Core/Node/Component/Derivative/Render/Model3D.h"
 #include "Core/Node/Component/Derivative/Camera/Camera.h"
 // network
+#include "Core/Framework/Networking/NetworkManager.h"
 #include "Core/Framework/Networking/Server.h"
 #include "Core/Framework/Networking/Client.h"
 
+#include "GameFlow/GameManager.h"
+#include "Core/Framework/Threading/ThreadSpool.h"
 
 class ActionBase
 {
@@ -184,8 +187,17 @@ public:
 
 	virtual bool init()
 	{
-		Server server;
-		server.Init();
+		auto* networkManager = &NetworkManager::getInstance();
+		if (networkManager->isSolo()) {
+			networkManager->setLocalInterface(std::make_unique<Server>(Server()));
+			auto& motherSchedual = GameManager::getInstance().getThreadMaster();
+			// TODO: fix this!!!
+			auto thread = motherSchedual.getAvaliable();
+			thread->addFiber(Fiber([&networkManager]() {
+				networkManager->getInstance().getlocalInterface().Init();
+			}));
+			return true;
+		}
 		return true;
 	}
 };
@@ -199,8 +211,17 @@ public:
 
 	virtual bool init()
 	{
-		Client client;
-		client.Init();
+		auto* networkManager = &NetworkManager::getInstance();
+		if (networkManager->isSolo()) {
+			networkManager->setLocalInterface(std::make_unique<Client>(Client()));
+			auto& motherSchedual = GameManager::getInstance().getThreadMaster();
+			// TODO: fix this!!!
+			auto thread = motherSchedual.getAvaliable();
+			thread->addFiber(Fiber([&networkManager]() {
+				networkManager->getInstance().getlocalInterface().Init();
+			}));
+			return true;
+		}
 		return true;
 	}
 };

@@ -1,4 +1,6 @@
 #include "NetworkManager.h"
+#include "Core/Framework/Networking/Server.h"
+#include "Core/Framework/Networking/Client.h"
 
 bool NetworkManager::Update()
 {
@@ -7,21 +9,22 @@ bool NetworkManager::Update()
 
 bool NetworkManager::isClient()
 {
-	return false;
+	return (dynamic_cast<Client*>(m_localInterface.get()));
 }
 
 bool NetworkManager::isHost()
 {
-	return false;
+	return (dynamic_cast<Server*>(m_localInterface.get()));
 }
 
 bool NetworkManager::isSolo()
 {
-	return false;
+	return (m_localInterface == nullptr);
 }
 
-void NetworkManager::setLocalInterface()
+void NetworkManager::setLocalInterface(std::unique_ptr<INet> netTypeObj)
 {
+	m_localInterface = std::move(netTypeObj);
 }
 
 void NetworkManager::Serialize(eNetMessage msg)
@@ -30,7 +33,7 @@ void NetworkManager::Serialize(eNetMessage msg)
 		m_localInterface->Serialize(msg);
 }
 
-const INet & NetworkManager::getlocalInterface() const
+ INet& NetworkManager::getlocalInterface() const
 {
-	return *m_localInterface.get();
+	return *m_localInterface;
 }
