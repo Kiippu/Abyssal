@@ -8,9 +8,17 @@
 #include <iomanip>
 #include <sstream>
 
+#ifdef __cpp_lib_filesystem
+#include <filesystem>
+namespace fs = std::filesystem;
+#elif __cpp_lib_experimental_filesystem
+#include <experimental/filesystem>
 namespace fs = std::experimental::filesystem;
-using namespace std;
+#else
+#error "no filesystem support ='("
+#endif
 
+using namespace std;
 
 void FileSystemHelper::createFolder(std::string pathName)
 {

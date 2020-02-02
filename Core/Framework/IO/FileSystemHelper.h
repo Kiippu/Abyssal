@@ -22,7 +22,6 @@ WILL NOT REGISTER WITH OUT PERIOD BEFORE EXTENSION
 
 #include <string>
 #include <vector>
-#include <filesystem>
 
 class FileSystemHelper
 {
