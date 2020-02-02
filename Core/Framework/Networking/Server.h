@@ -27,11 +27,13 @@ public:
 
 	virtual void AddUser();
 
-	virtual void Init();
+	virtual void InitTCP();
+
+	virtual void InitUDP();
 
 	virtual void Serialize(eNetMessage);
 
-	virtual void Deserialize(eNetMessage);
+	virtual void Deserialize(char*data);
 
 private:
 	/// private implementation for members

@@ -18,7 +18,12 @@ void Server::AddUser()
 {
 }
 
-void Server::Init()
+void Server::InitTCP()
+{
+
+}
+
+void Server::InitUDP()
 {
 	printf("\nInit Server begin\n");
 	// Port number
@@ -59,17 +64,20 @@ void Server::Init()
 		ZeroMemory(&buf, 1024);
 		// wait for msg
 		int bytesIn = recvfrom(in, buf, 1024, 0, (sockaddr*)&client, &clientLength);
-		if (bytesIn == SOCKET_ERROR) {
-			printf("error recieved from client!: %d!", WSAGetLastError());
-			continue;
+		if (sizeof(bytesIn) > 0)
+		{
+			if (bytesIn == SOCKET_ERROR) {
+				printf("error recieved from client!: %d!", WSAGetLastError());
+				continue;
+			}
+			// display msg
+			char clientIP[256];
+			ZeroMemory(&clientIP, 256);
+			// convert IP struct to string 
+			inet_ntop(AF_INET, &client.sin_addr, clientIP, 256);
+			printf("\n Message recv from %s : %s", clientIP, buf);
+			//Deserialize(buf);
 		}
-		// display msg
-		char clientIP[256];
-		ZeroMemory(&clientIP, 256);
-		// convert IP struct to string 
-		inet_ntop(AF_INET, &client.sin_addr, clientIP, 256);
-		printf("\n Message recv from %s : %s", clientIP, buf);
-
 	}
 
 	//close socket
@@ -85,8 +93,50 @@ void Server::Init()
 
 void Server::Serialize(eNetMessage)
 {
+	
 }
 
-void Server::Deserialize(eNetMessage)
+void Server::Deserialize(char* data)
 {
+	// base message
+	eNetMessageBase msg = (*(eNetMessageBase*)(data));
+	switch (msg)
+	{
+	case eNetMessageBase::worldData:
+		break;
+	case eNetMessageBase::playerData:
+		break;
+	case eNetMessageBase::networkStatus: {
+
+		eNetMessageStatus netMsg = (*(eNetMessageStatus*)(data + sizeof(eNetMessageStatus)));
+		switch (netMsg)
+		{
+		case eNetMessageStatus::fullStack:
+			break;
+		case eNetMessageStatus::connectedDevices: {
+
+			unsigned playerID = (*(unsigned*)(data + (sizeof(unsigned)*2)));
+			printf("Player with ID#%d trying to join!", playerID);
+		}
+			break;
+		case eNetMessageStatus::deviceDisconnect:
+			break;
+		case eNetMessageStatus::ping:
+			break;
+		case eNetMessageStatus::UNKNOWN:
+			break;
+		default:
+			break;
+		}
+	}
+		break;
+	case eNetMessageBase::UNKNOWN:
+		break;
+	default:
+		break;
+	}
+	
+
+
+
 }

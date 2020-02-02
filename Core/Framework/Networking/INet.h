@@ -13,8 +13,10 @@ protected:
 
 public:
 
-	/// build class after constructor 
-	virtual void Init() = 0;
+	/// build udp connection 
+	virtual void InitUDP() = 0;
+	/// build tcp connection 
+	virtual void InitTCP() = 0;
 	/// Update Interface
 	virtual void Update() = 0;
 	/// add user to interface
@@ -22,7 +24,7 @@ public:
 	/// For thread - serialize incomming data
 	virtual void Serialize(eNetMessage) = 0;
 	/// For Thread - deserialize data to be sent off to users/server
-	virtual void Deserialize(eNetMessage) = 0;
+	virtual void Deserialize(char*) = 0;
 	/// get the Interface type
 	virtual eNetType& getNetType() { return m_type; };
 

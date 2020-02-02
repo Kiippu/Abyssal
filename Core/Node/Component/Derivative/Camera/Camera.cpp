@@ -56,12 +56,12 @@ bool Camera::Update()
 	return true;
 }
 
-void Camera::Serialize(char * data)
+void Camera::Serialize()
 {
 	printf("Serializing %s", GetComponentTypeString().c_str());
 }
 
-void Camera::Deserialize(char * data)
+void Camera::Deserialize(char*data)
 {
 	printf("Deserializing %s", GetComponentTypeString().c_str());
 }

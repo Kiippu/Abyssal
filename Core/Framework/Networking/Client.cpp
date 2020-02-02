@@ -5,6 +5,10 @@
 #include <iostream>
 #include <string>
 
+//#include "Core/Node/Derivative/DynamicEntityNode.h"
+//#include "GameFlow/GameObjects/GameObjects.h"
+//#include "Core/Node/Containers/Container.h"
+
 #pragma comment(lib, "ws2_32.lib")
 //
 //struct Client::PImpl
@@ -29,7 +33,12 @@ void Client::AddUser()
 {
 }
 
-void Client::Init()
+void Client::InitTCP()
+{
+
+}
+
+void Client::InitUDP()
 {
 	printf("\nInit Server begin\n");
 	// Port number
@@ -83,8 +92,20 @@ void Client::Init()
 
 void Client::Serialize(eNetMessage)
 {
+	//auto* gameObjects = &GameObjects::getInstance();
+	//for (auto& obj : gameObjects->getAllDynamicObjects())
+	//{
+	//	if (auto dynamic = std::dynamic_pointer_cast<DynamicEntityNode>(obj)) 
+	//	{
+	//		auto component = dynamic->GetComponentContainer()->GetContainerList();
+	//			/*for (auto& comp : comp)
+	//			{
+
+	//			}*/
+	//	}
+	//}
 }
 
-void Client::Deserialize(eNetMessage)
+void Client::Deserialize(char*data)
 {
 }

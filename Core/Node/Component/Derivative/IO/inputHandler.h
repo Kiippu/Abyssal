@@ -79,8 +79,8 @@ public:
 	// inherited update for component
 	virtual bool Update();
 	/// networking inherited
-	virtual void Serialize(char* data);
-	virtual void Deserialize(char* data);
+	virtual void Serialize();
+	virtual void Deserialize(char*data);
 
 	// Safety to delete any copies or new instances
 	inputHandler(const inputHandler&) = delete;

@@ -2,6 +2,9 @@
 #define SERIALIZATION
 #pragma once
 
+#include <memory>
+#include "Core/Framework/Threading/CsLibGuarded/guarded.hpp"
+
 enum class eNetworkEvent : unsigned short 
 {
 	// unknown
@@ -21,16 +24,23 @@ class Serialization
 {
 public:
 
+	virtual void Serialize() = 0;
 
-	virtual void Serialize(char* data) = 0;
-
-	virtual void Deserialize(char* data) = 0;
+	virtual void Deserialize(char*data) = 0;
 
 private:
 
-	 eNetworkEvent getEvent(char* event);
+	eNetworkEvent getEvent(char* event);
 
-	char * m_data;
+	libguarded::guarded<char*> data;
+
+	/*std::thread th1([&data]() {
+		for (int i = 0; i < 10000; ++i) {
+			++(*data_handle);
+		}
+	});*/
+
+	//char * data;
 	
 };
 

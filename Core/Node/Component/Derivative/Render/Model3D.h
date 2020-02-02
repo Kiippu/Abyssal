@@ -24,8 +24,8 @@ public:
 	~Model3D();
 
 	virtual bool Update();
-	virtual void Serialize(char*);
-	virtual void Deserialize(char*);
+	virtual void Serialize();
+	virtual void Deserialize(char*data);
 
 	Model & getModel();
 

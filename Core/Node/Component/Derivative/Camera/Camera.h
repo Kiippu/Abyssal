@@ -14,8 +14,8 @@ public:
 	~Camera();
 
 	virtual bool Update();
-	virtual void Serialize(char* data);
-	virtual void Deserialize(char* data);
+	virtual void Serialize();
+	virtual void Deserialize(char*data);
 
 	glm::mat4 getViewPerspective() const;
 

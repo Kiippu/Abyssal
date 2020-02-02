@@ -91,6 +91,9 @@
     <Filter Include="Core\Node\Component\Derivatives\Camera">
       <UniqueIdentifier>{4d9d3053-7ade-44a9-b075-3625f370ec03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Famwork\Threading\CsLibGuarded">
+      <UniqueIdentifier>{08c6479f-61d3-44eb-995f-6077f0d72c54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Node\Node.cpp">
@@ -319,6 +322,30 @@
     </ClInclude>
     <ClInclude Include="Core\Node\Component\Derivative\Camera\Camera.h">
       <Filter>Core\Node\Component\Derivatives\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\cow_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\deferred_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\lr_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\ordered_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\rcu_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\rcu_list.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Threading\CsLibGuarded\shared_guarded.hpp">
+      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

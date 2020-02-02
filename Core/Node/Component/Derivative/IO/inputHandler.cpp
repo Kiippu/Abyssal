@@ -75,12 +75,12 @@ bool inputHandler::Update()
 	return true;
 }
 
-void inputHandler::Serialize(char * data)
+void inputHandler::Serialize()
 {
 	printf("Serializing %s" , GetComponentTypeString().c_str());
 }
 
-void inputHandler::Deserialize(char * data)
+void inputHandler::Deserialize(char*data)
 {
 	printf("Deserializing %s", GetComponentTypeString().c_str());
 }

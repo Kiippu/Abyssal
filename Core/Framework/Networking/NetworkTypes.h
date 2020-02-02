@@ -8,12 +8,47 @@ enum class eNetType : unsigned {
 };
 
 enum class eNetMessage : unsigned {
-	UNKNOWN,
 	strafeLeft,
 	strafeRight,
 	strafeForward,
 	strafeBackward,
-	resetCamera
+	resetCamera,
+
+	UNKNOWN = UINT_MAX
+};
+
+/// first Message caught by network Managed deserializer
+enum class eNetMessageBase : unsigned {
+	worldData,
+	playerData,
+	networkStatus,
+
+	UNKNOWN = UINT_MAX
+};
+
+/// player specific messages
+enum class eNetMessagePlayer : unsigned {
+	fullReset,
+	input,
+	worldPosiiton,
+
+	UNKNOWN = UINT_MAX
+};
+
+/// world/game level specific messages
+enum class eNetMessageWorld : unsigned {
+	fullReset,
+
+	UNKNOWN = UINT_MAX
+};
+
+enum class eNetMessageStatus : unsigned {
+	fullStack,
+	connectedDevices,
+	deviceDisconnect,
+	ping,
+
+	UNKNOWN = UINT_MAX
 };
 
 #endif // !NETWORK_TYPES_H

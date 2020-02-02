@@ -24,12 +24,12 @@ Model3D::~Model3D()
 {
 }
 
-void Model3D::Serialize(char * data)
+void Model3D::Serialize()
 {
 	printf("Serializing %s", GetComponentTypeString().c_str());
 }
 
-void Model3D::Deserialize(char * data)
+void Model3D::Deserialize(char*data)
 {
 	printf("Deserializing %s", GetComponentTypeString().c_str());
 }

@@ -194,7 +194,7 @@ public:
 			// TODO: fix this!!!
 			auto thread = motherSchedual.getAvaliable();
 			thread->addFiber(Fiber([&networkManager]() {
-				networkManager->getInstance().getlocalInterface().Init();
+				networkManager->getInstance().getlocalInterface().InitUDP();
 			}));
 			return true;
 		}
@@ -218,7 +218,7 @@ public:
 			// TODO: fix this!!!
 			auto thread = motherSchedual.getAvaliable();
 			thread->addFiber(Fiber([&networkManager]() {
-				networkManager->getInstance().getlocalInterface().Init();
+				networkManager->getInstance().getlocalInterface().InitUDP();
 			}));
 			return true;
 		}
