@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 
-//#include "Core/Node/Derivative/DynamicEntityNode.h"
+#include "Core/Node/Derivative/DynamicEntityNode.h"
+#include "Core/Node/Component/Derivative/ComponentUpdatable.h"
 //#include "GameFlow/GameObjects/GameObjects.h"
 //#include "Core/Node/Containers/Container.h"
 
@@ -92,18 +93,15 @@ void Client::InitUDP()
 
 void Client::Serialize(eNetMessage)
 {
-	//auto* gameObjects = &GameObjects::getInstance();
-	//for (auto& obj : gameObjects->getAllDynamicObjects())
-	//{
-	//	if (auto dynamic = std::dynamic_pointer_cast<DynamicEntityNode>(obj)) 
-	//	{
-	//		auto component = dynamic->GetComponentContainer()->GetContainerList();
-	//			/*for (auto& comp : comp)
-	//			{
-
-	//			}*/
-	//	}
-	//}
+	m_gameObjects->getAllDynamicObjects();
+	for (auto obj : m_gameObjects->getAllDynamicObjects())
+	{
+		for (auto base : obj->GetComponentContainer()->GetContainerList()) 
+		{
+			auto& comp = dynamic_cast<ComponentUpdatable&>(*base);
+			comp.Serialize();
+		}
+	}
 }
 
 void Client::Deserialize(char*data)

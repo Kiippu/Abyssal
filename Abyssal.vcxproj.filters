@@ -43,30 +43,6 @@
     <Filter Include="GameFlow\Factories">
       <UniqueIdentifier>{c951c3ad-db37-44b7-872c-c686b11f86c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Famwork">
-      <UniqueIdentifier>{e31a7b83-c05d-4e3b-bdd7-7323842c3c9a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Render">
-      <UniqueIdentifier>{5448643d-2362-475e-9807-32a87ee61f8d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Render\Shader">
-      <UniqueIdentifier>{86c27fdb-36a8-4372-80c0-fd4cafeedac1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Render\Shader\Fragment">
-      <UniqueIdentifier>{fb9e30d3-c977-4304-919a-b5b417bddf08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Render\Shader\Vertex">
-      <UniqueIdentifier>{012ed42c-b20c-4d25-a32b-a7cf802eae47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Render\Shader\Geometry">
-      <UniqueIdentifier>{c40ddb02-9dbf-44cb-bf7c-eb16b026b8fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\IO">
-      <UniqueIdentifier>{902b9df9-6aa6-4aea-acf0-ffe6b4f805e5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Events">
-      <UniqueIdentifier>{1eb2a76b-6281-468a-af00-671bf51feeab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Node\Component">
       <UniqueIdentifier>{47b7a24d-9790-4e07-83fc-c05e3dbf1ec7}</UniqueIdentifier>
     </Filter>
@@ -82,17 +58,41 @@
     <Filter Include="Core\Node\Container">
       <UniqueIdentifier>{7a1d9b9c-d241-498d-ab9a-83bc9347005c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Famwork\Threading">
-      <UniqueIdentifier>{95075b5d-6df1-4cdc-9452-762f72a0e482}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Famwork\Networking">
-      <UniqueIdentifier>{a80eddce-545c-4b9e-ad20-4fa891a3a1ac}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Node\Component\Derivatives\Camera">
       <UniqueIdentifier>{4d9d3053-7ade-44a9-b075-3625f370ec03}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Famwork\Threading\CsLibGuarded">
+    <Filter Include="Core\Framework">
+      <UniqueIdentifier>{e31a7b83-c05d-4e3b-bdd7-7323842c3c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Render">
+      <UniqueIdentifier>{5448643d-2362-475e-9807-32a87ee61f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Render\Shader">
+      <UniqueIdentifier>{86c27fdb-36a8-4372-80c0-fd4cafeedac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Render\Shader\Fragment">
+      <UniqueIdentifier>{fb9e30d3-c977-4304-919a-b5b417bddf08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Render\Shader\Vertex">
+      <UniqueIdentifier>{012ed42c-b20c-4d25-a32b-a7cf802eae47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Render\Shader\Geometry">
+      <UniqueIdentifier>{c40ddb02-9dbf-44cb-bf7c-eb16b026b8fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\IO">
+      <UniqueIdentifier>{902b9df9-6aa6-4aea-acf0-ffe6b4f805e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Events">
+      <UniqueIdentifier>{1eb2a76b-6281-468a-af00-671bf51feeab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Threading">
+      <UniqueIdentifier>{95075b5d-6df1-4cdc-9452-762f72a0e482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Threading\CsLibGuarded">
       <UniqueIdentifier>{08c6479f-61d3-44eb-995f-6077f0d72c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Framework\Networking">
+      <UniqueIdentifier>{a80eddce-545c-4b9e-ad20-4fa891a3a1ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -127,13 +127,13 @@
       <Filter>GameFlow\Factories</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\IO\FileSystemHelper.cpp">
-      <Filter>Core\Famwork\IO</Filter>
+      <Filter>Core\Framework\IO</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Render\Model.cpp">
-      <Filter>Core\Famwork\Render</Filter>
+      <Filter>Core\Framework\Render</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Render\Renderer3D.cpp">
-      <Filter>Core\Famwork\Render</Filter>
+      <Filter>Core\Framework\Render</Filter>
     </ClCompile>
     <ClCompile Include="Core\Node\Component\Derivative\IO\ReadWrite.cpp">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
@@ -154,40 +154,40 @@
       <Filter>Core\Node\Container</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Threading\ThreadSpool.cpp">
-      <Filter>Core\Famwork\Threading</Filter>
+      <Filter>Core\Framework\Threading</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Threading\ThreadScheduler.cpp">
-      <Filter>Core\Famwork\Threading</Filter>
+      <Filter>Core\Framework\Threading</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Events\SimpleEvent.cpp">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Events\IEvent.cpp">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClCompile>
     <ClCompile Include="Core\Node\componentLabelConverter.cpp">
       <Filter>Core\Node\Component</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Events\InputEventHandler.cpp">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClCompile>
     <ClCompile Include="Core\Node\Component\Derivative\IO\inputHandler.cpp">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\IO\inputEventActions.cpp">
-      <Filter>Core\Famwork\IO</Filter>
+      <Filter>Core\Framework\IO</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Networking\Serialization.cpp">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Networking\NetworkManager.cpp">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Networking\Server.cpp">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Core\Framework\Networking\Client.cpp">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Core\Node\Component\Derivative\Camera\Camera.cpp">
       <Filter>Core\Node\Component\Derivatives\Camera</Filter>
@@ -234,16 +234,16 @@
       <Filter>GameFlow\Factories</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\IO\FileSystemHelper.h">
-      <Filter>Core\Famwork\IO</Filter>
+      <Filter>Core\Framework\IO</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Render\Model.h">
-      <Filter>Core\Famwork\Render</Filter>
+      <Filter>Core\Framework\Render</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Render\Renderer3D.h">
-      <Filter>Core\Famwork\Render</Filter>
+      <Filter>Core\Framework\Render</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Render\Shader\Shader.h">
-      <Filter>Core\Famwork\Render\Shader</Filter>
+      <Filter>Core\Framework\Render\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\Component\Derivative\IO\ReadWrite.h">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
@@ -276,76 +276,76 @@
       <Filter>Core\Node\Container</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\ThreadScheduler.h">
-      <Filter>Core\Famwork\Threading</Filter>
+      <Filter>Core\Framework\Threading</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\ThreadSpool.h">
-      <Filter>Core\Famwork\Threading</Filter>
+      <Filter>Core\Framework\Threading</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\Fiber.h">
-      <Filter>Core\Famwork\Threading</Filter>
+      <Filter>Core\Framework\Threading</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Events\SimpleEvent.h">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Events\IEvent.h">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\componentLabelConverter.h">
       <Filter>Core\Node\Component</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Events\InputEventHandler.h">
-      <Filter>Core\Famwork\Events</Filter>
+      <Filter>Core\Framework\Events</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\Component\Derivative\IO\inputHandler.h">
       <Filter>Core\Node\Component\Derivatives\IO</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\IO\inputEventActions.h">
-      <Filter>Core\Famwork\IO</Filter>
+      <Filter>Core\Framework\IO</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\Serialization.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\NetworkManager.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\INet.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\Server.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\Client.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Networking\NetworkTypes.h">
-      <Filter>Core\Famwork\Networking</Filter>
+      <Filter>Core\Framework\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Core\Node\Component\Derivative\Camera\Camera.h">
       <Filter>Core\Node\Component\Derivatives\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\cow_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\deferred_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\lr_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\ordered_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\rcu_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\rcu_list.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\shared_guarded.hpp">
-      <Filter>Core\Famwork\Threading\CsLibGuarded</Filter>
+      <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -355,19 +355,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Core\Framework\Render\Shader\Fragment\frag.glsl">
-      <Filter>Core\Famwork\Render\Shader\Fragment</Filter>
+      <Filter>Core\Framework\Render\Shader\Fragment</Filter>
     </None>
     <None Include="Core\Framework\Render\Shader\Fragment\frag0.glsl">
-      <Filter>Core\Famwork\Render\Shader\Fragment</Filter>
+      <Filter>Core\Framework\Render\Shader\Fragment</Filter>
     </None>
     <None Include="Core\Framework\Render\Shader\Geometry\geom.glsl">
-      <Filter>Core\Famwork\Render\Shader\Geometry</Filter>
+      <Filter>Core\Framework\Render\Shader\Geometry</Filter>
     </None>
     <None Include="Core\Framework\Render\Shader\Vertex\vert.glsl">
-      <Filter>Core\Famwork\Render\Shader\Vertex</Filter>
+      <Filter>Core\Framework\Render\Shader\Vertex</Filter>
     </None>
     <None Include="Core\Framework\Render\Shader\Vertex\vert0.glsl">
-      <Filter>Core\Famwork\Render\Shader\Vertex</Filter>
+      <Filter>Core\Framework\Render\Shader\Vertex</Filter>
     </None>
   </ItemGroup>
 </Project>

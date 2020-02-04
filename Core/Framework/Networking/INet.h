@@ -4,12 +4,14 @@
 
 #include <memory>
 #include "Core/Framework/Networking/NetworkTypes.h"
-#include "Core/Framework/Networking/NetworkTypes.h"
+#include "GameFlow/GameObjects/GameObjects.h"
+
+class GameObjects;
 
 class INet
 {
 protected:
-	explicit INet(eNetType type) : m_type(type) {};
+	explicit INet(eNetType type) : m_type(type), m_gameObjects(&GameObjects::getInstance()) {};
 
 public:
 
@@ -29,8 +31,10 @@ public:
 	virtual eNetType& getNetType() { return m_type; };
 
 private:
-
 	eNetType & m_type;
+
+protected:
+	GameObjects * m_gameObjects;
 	
 };
 

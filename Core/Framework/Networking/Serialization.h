@@ -22,7 +22,7 @@ enum class eNetworkEvent : unsigned short
 
 class Serialization
 {
-public:
+protected:
 
 	virtual void Serialize() = 0;
 

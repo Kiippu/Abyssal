@@ -4,7 +4,7 @@
 
 bool NetworkManager::Update()
 {
-	return false;
+	return true;
 }
 
 bool NetworkManager::isClient()

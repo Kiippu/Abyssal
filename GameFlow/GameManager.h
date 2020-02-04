@@ -37,13 +37,13 @@ private:
 
 	void Factories();
 
-	MasterUpdate * m_masterUpdate;
+	MasterUpdate *		m_masterUpdate;
 
-	Renderer3D * m_renderer;
+	Renderer3D *		m_renderer;
 
-	NetworkManager * m_networkManager;
+	NetworkManager *	m_networkManager;
 
-	ThreadSpool * m_threadSpool;
+	ThreadSpool *		m_threadSpool;
 
 public:
 	// Safety to delete any copies or new instances

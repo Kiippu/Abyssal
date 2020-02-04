@@ -15,6 +15,10 @@ public:
 
 	virtual bool Update() = 0;
 
+	virtual void Serialize() {};
+
+	virtual void Deserialize(char*data) {};
+
 };
 
 #endif // !COMPONENT_UPDATABLE_H

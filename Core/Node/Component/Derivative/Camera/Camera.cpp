@@ -28,9 +28,7 @@ struct Camera::PImpl
 		minDis,				// Near plane ( anything close than this will be cut off )
 		maxDis				// Far plane ( anything further away than this will be cut off )
 	);
-
 };
-
 
 Camera::Camera()
 	:ComponentUpdatable( LABEL_COMPONENT_TYPE::COMP_CAMERA, LABEL_PRIORITY_TYPE::PRTY_HIGH, "camera")
