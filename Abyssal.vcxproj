@@ -173,10 +173,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\Debug;$(ProjectDir);$(ProjectDir)\packages\glm;$(ProjectDir)\packages\SDL2_ttf\include;$(ProjectDir)\packages\SDL2_net\include;$(ProjectDir)\packages\SDL2_image\include;$(ProjectDir)\packages\glew-2\include;$(ProjectDir)\packages\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\include\GLFW;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\vulkan;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\shaderc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(ProjectDir)\packages\SDL2_ttf\lib\x86;$(ProjectDir)\packages\SDL2_net\lib\x86;$(ProjectDir)\packages\SDL2_image\lib\x86;$(ProjectDir)\packages\glew-2\lib\Release\Win32;$(ProjectDir)\packages\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\x64;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Lib;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x64;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2019;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2_net.lib; SDL2_ttf.lib; SDL2_image.lib; SDL2_image.lib; glew32.lib; opengl32.lib; SDL2.lib;SDL2main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -187,10 +187,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\include\GLFW;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\vulkan;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\shaderc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x64;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x86;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\x64;D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\x64;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Lib;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x64;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2019;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -203,10 +203,12 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\include\GLFW;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\vulkan;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\shaderc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\x64;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Lib;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x64;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2019;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -217,10 +219,12 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\include\GLFW;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\include;D:\Game Dev\Engine_dev\Abyssal\packages\glm;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\vulkan;D:\Game Dev\Engine_dev\Abyssal;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Include\shaderc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Game Dev\Engine_dev\Abyssal\packages\glew-2\lib\Release\x64;D:\Game Dev\Engine_dev\Abyssal\packages\VulkanSDK\Lib;D:\Game Dev\Engine_dev\Abyssal\packages\SDL2\lib\x64;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2019;D:\Game Dev\Engine_dev\Abyssal\packages\glfw\lib-vc2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
