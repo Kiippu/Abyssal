@@ -30,7 +30,7 @@ void Model::SetMatrix(glm::mat4 mvp)
 void Model::Render() const
 {
 	m_shader.UseProgram();
-	glDrawArrays(GL_TRIANGLES, 0, m_positions.size() / 3 );
+	//glDrawArrays(GL_TRIANGLES, 0, m_positions.size() / 3 );
 }
 
 void Model::ResetMatrix()

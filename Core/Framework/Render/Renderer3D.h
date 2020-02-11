@@ -16,9 +16,9 @@
 
 // OpenGL stuff
 #define GL3_PROTOTYPES 1
-#include <GL/glew.h>
-#include <glm/glm.hpp>
-#include <SDL.h>
+//#include <GL/glew.h>
+//#include <glm/glm.hpp>
+//#include <SDL.h>
 
 #include "GameFlow/GameObjects/GameObjects.h"
 

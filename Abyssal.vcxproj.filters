@@ -192,6 +192,9 @@
     <ClCompile Include="Core\Node\Component\Derivative\Camera\Camera.cpp">
       <Filter>Core\Node\Component\Derivatives\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Framework\Render\VulkanMaster.cpp">
+      <Filter>Core\Framework\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\Math.h">
@@ -346,6 +349,9 @@
     </ClInclude>
     <ClInclude Include="Core\Framework\Threading\CsLibGuarded\shared_guarded.hpp">
       <Filter>Core\Framework\Threading\CsLibGuarded</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Framework\Render\VulkanMaster.h">
+      <Filter>Core\Framework\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

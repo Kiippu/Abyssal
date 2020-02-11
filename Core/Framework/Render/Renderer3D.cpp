@@ -23,8 +23,8 @@
 std::string programName = "Abyssal Engine";
 
 // OpenGL stuff
-#define GL3_PROTOTYPES 1
-#include <GL/glew.h>
+//#define GL3_PROTOTYPES 1
+//#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <SDL.h>
 
@@ -198,10 +198,10 @@ bool Renderer3D::SetUpShader(const std::string & vertex, const std::string & fra
 void Renderer3D::RenderStart()
 {
 	// Make our background black
-	glClearColor(0.5, 0.5, 0.5, 1.0);
+	//glClearColor(0.5, 0.5, 0.5, 1.0);
 
 	// We need to add GL_DEPTH_BUFFER_BIT so that the depth buffer will be cleared too.
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Renderer3D::RenderModel(const Model & model)
@@ -275,13 +275,13 @@ void Renderer3D::CheckSDLError(int line)
 
 void Renderer3D::SetOpenGLOptions()
 {
-	// Enable blending so that we can have transparanet object
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//// Enable blending so that we can have transparanet object
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	// Enable depth testing so that closer triangles will hide the triangles farther away
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LEQUAL);
+	//// Enable depth testing so that closer triangles will hide the triangles farther away
+	//glEnable(GL_DEPTH_TEST);
+	//glDepthFunc(GL_LEQUAL);
 }
 
 bool Renderer3D::SetSDL_GL_Attributes()
